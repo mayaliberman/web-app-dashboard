@@ -1,0 +1,63 @@
+img, svg {
+    height: 50px;
+    width: 50px;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows: auto;
+    grid-template-areas: 
+    "header"
+    "navigation"
+    "main";
+}
+
+.header {
+grid-area: header;
+background-color: pink;
+}
+
+.main {
+grid-area: main;
+display: grid;
+background-color: greenyellow;
+}
+
+.navigation {
+grid-area: navigation;
+background-color: lightblue;
+}
+
+.widget-container-full, .widget-container-half {
+    width: 95vw;
+}
+
+@media (min-width: 768px) {
+    .grid-container {
+        grid-template-columns: 55px 1fr;
+        grid-template-areas: 
+        "header header"
+        "navigation main" ;
+    }
+
+    .main {
+        grid-template-columns: 50%;
+    }
+
+    .traffic, .social {
+        grid-column: 1 / span 2;
+    }
+
+    .daily, .members, .message {
+        grid-column: 1 / span 1;
+    }
+
+    .widget-container-full {
+        width: 90vw;
+    }
+
+    .widget-container-half {
+        width: 45vw;
+    }
+}

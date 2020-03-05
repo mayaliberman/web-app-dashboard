@@ -4,11 +4,13 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="normalize.css" rel="stylesheet">
+    <link href="main.css" rel="stylesheet">
     <title>Web App Dashboard</title>
 </head>
 
 <body class="grid-container">
-    <header>
+    <header class="header">
         <h1>Your App</h1>
         <div>
             <img src="./icons/icon-bell.svg">
@@ -18,13 +20,13 @@
         <h3>Johnna Smith</h3>
         </div>
     </header>
-    <nav>
+    <nav class="navigation">
         <a><img src="./icons/icon-dashboard.svg" alt="icon dashboard" /></a>
         <a><img src="./icons/icon-members.svg" alt="icon members" /></a>
         <a><img src="./icons/icon-visits.svg" alt="icon visits" /></a>
         <a><img src="./icons/icon-settings.svg" alt="icon settings" /></a>
     </nav>
-    <main>
+    <main class="main">
         <div class="main-header">
             <h2 class="headline">Dashboard</h2>
             <div class="main-header-search">
@@ -49,12 +51,18 @@
             </div>
         </section>
         <section class="daily">
-            <h3>Daily</h3>
+            <h3>Daily Traffic</h3>
             <div class="widget-container-half">
                 <canvas id="daily-chart"></canvas>
             </div>
         </section>
-        <div class="social-container">
+        <section class="daily">
+            <h3>Mobile Users</h3>
+            <div class="widget-container-half">
+                <canvas id="daily-chart"></canvas>
+            </div>
+        </section>
+        <div class="social">
             <div class="social-image">
                 <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg"
                     xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 32 32"
@@ -158,6 +166,7 @@
             </div>
         </section>
     </main>
+    <script src="app.js"></script>
 </body>
 
 </html>
