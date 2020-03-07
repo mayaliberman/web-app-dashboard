@@ -1,0 +1,41 @@
+.header {
+  background-color: $primary-color;
+  display: flex;
+  padding: 5px 3%;
+  justify-content: space-between;
+  color: $white;
+  align-items: center;
+}
+
+.account {
+  display: flex;
+  align-items: center;
+  font-weight: 500;
+  letter-spacing: 1.5px;
+}
+
+.account .profile-image {
+  width: 30px;
+  height: 30px;
+  padding: 0px;
+}
+.profile-image {
+  border-radius: 50%;
+}
+
+.bell-image  {
+
+  padding-right: 27px;
+  padding-bottom: 10px;
+  padding-top: 10px;
+}
+
+// .bell-image svg {
+//    height: 50px;
+//   width: 50px; 
+// }
+
+.profile-name {
+  padding-left: 10px;
+  font-size: 0.8rem;
+}

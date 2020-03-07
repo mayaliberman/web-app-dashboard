@@ -60,7 +60,8 @@ let trafficOptions = {
   },
   legend: {
     display: false
-  }
+  },
+  
 };
 
 let trafficChart = new Chart(trafficCanvas, {

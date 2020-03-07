@@ -172,6 +172,7 @@ h3, h2 {
 /* Social Stats */
 
 .social-icons {
+ 
   display: flex;
   padding-top: 30px;
   padding-bottom: 30px;
@@ -180,7 +181,8 @@ h3, h2 {
 }
 
 .google, .facebook, .twitter {
-  border: 1px solid grey;
+  box-shadow: 1px 1px 1px lightgray;
+  border: 1px solid lightgray;
   padding: 15px 50px;
   border-radius: 5px;
   margin-right: 10px;
@@ -190,8 +192,7 @@ h3, h2 {
   
 }
 
-
-.social-text p:first-child{
+.social-text p:nth-child(2){
   font-size: 25px;
 }
 
@@ -218,6 +219,26 @@ h3, h2 {
     grid-column: 1 / span 2;
   }
 
+  .social-icons {
+    justify-content: space-evenly;
+    
+  }
+
+  .google, .facebook, .twitter {
+    display: flex;
+    flex-direction: row;
+    padding: 30px 60px;
+   
+  }
+
+  .social-image {
+    flex-basis: 60%;
+    padding-right: 30px;
+  }
+
+  .social-image svg {
+    transform: scale(1.5)
+  }
   .daily,
   .members,
   .message {

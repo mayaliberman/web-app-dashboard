@@ -1,0 +1,22 @@
+{
+  "name": "web-app-dashboard",
+  "version": "1.0.0",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mayaliberman/web-app-dashboard.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mayaliberman/web-app-dashboard/issues"
+  },
+  "homepage": "https://github.com/mayaliberman/web-app-dashboard#readme",
+  "description": "",
+  "dependencies": {
+    "sass": "^1.26.2"
+  }
+}
