@@ -38,8 +38,8 @@ let trafficData = {
   datasets: [
     {
       data: [750, 1250, 1000, 2000, 1500, 1750, 1250, 1850, 2250, 1500, 2500],
-      backgroudnColor: "rgba(116, 119, 191, .3)",
-      borderWidth: 1
+      backgroundColor: "rgba(61, 113, 153, .3)",
+      borderWidth: 2
     }
   ]
 };
@@ -78,7 +78,7 @@ const dailyData = {
     {
       label: "# of Hits",
       data: [75, 115, 175, 125, 225, 200, 100],
-      backgroudnColor: "#7477bf",
+      backgroundColor: "#7477bf",
       borderWidth: 1
     }
   ]

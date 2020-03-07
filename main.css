@@ -3,6 +3,8 @@ svg {
   width: 50px;
 }
 
+
+
 h1,
 h2,
 h3,
@@ -12,9 +14,18 @@ p {
   margin: 0;
 }
 
+h3, h2 {
+  font-weight: 600;
+}
+
+.title-h3 {
+  padding-top: 20px;
+  padding-bottom: 20px;
+  padding-left: 10px;
+}
 .grid-container {
   display: grid;
-  grid-template-columns: 100%;
+  /* grid-template-columns: 100%; */
   grid-template-rows: auto;
   grid-template-areas:
     "header"
@@ -26,7 +37,8 @@ p {
 /******** HEADER******* */
 .header {
   grid-area: header;
-  background-color: #7477bf;
+
+  background-color: #3D7199;
   display: flex;
   padding: 5px 3%;
   justify-content: space-between;
@@ -74,7 +86,7 @@ p {
 
 .navigation {
   grid-area: navigation;
-  background-color: #373a9c;
+  background-color: #40428D;
   display: flex;
   justify-content: center;
 }
@@ -93,17 +105,23 @@ p {
 
 .main-header {
     display: flex;
+    justify-content: flex-start;
    
    
    
 }
 .headline {
     flex-grow: 1;
+   
+    padding-top: 15px;
+    padding-bottom: 15px;
+   
+   
 }
 .main-header-search {
     display: flex;
-    flex-grow: 2;
-    background-color: #40428d;
+    flex-grow: 6;
+    background-color: #415EA3;
     padding-top: 15px;
     padding-bottom: 15px;
     padding-right: 10px;
@@ -112,12 +130,76 @@ p {
     align-items: center;
 }
 
+/* Alert */
+
+.alert-banner {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px 10px;
+  background-color: #6C3D99;
+  margin: 10px;
+  color: white;
+  border-radius: 5px;
+}
+
+/* Trafic header */
+.traffic-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.traffic-nav {
+  display: flex;
+  list-style-type: none;
+  font-size: 13px;
+  
+}
+
+.traffic-nav li {
+  padding-left: 10px;
+  padding-right: 10px;
+}
 
 
 .widget-container-full,
 .widget-container-half {
   width: 95vw;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  
 }
+/* Social Stats */
+
+.social-icons {
+  display: flex;
+  padding-top: 30px;
+  padding-bottom: 30px;
+  padding-right: 15px;
+  justify-content: space-evenly;
+}
+
+.google, .facebook, .twitter {
+  border: 1px solid grey;
+  padding: 15px 50px;
+  border-radius: 5px;
+  margin-right: 10px;
+  margin-left: 10px;
+  text-align: center;
+  font-size: 13px;
+  
+}
+
+
+.social-text p:first-child{
+  font-size: 25px;
+}
+
+
+
+
+
+
 
 @media (min-width: 768px) {
   .grid-container {
