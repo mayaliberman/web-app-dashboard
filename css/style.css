@@ -572,7 +572,7 @@ template {
 }
 
 /* ============================================= */
-/*             Traffic & Daily Charts            */
+/*             Traffic,  Daily & mobile Charts            */
 /* ============================================= */
 .traffic-header {
   display: flex;
@@ -595,7 +595,7 @@ template {
 .traffic-nav li {
   padding: 10px 10px;
   list-style: none;
-  border-radius: 5px;
+  border-radius: 15px;
   margin-left: 3px;
   font-size: 0.8rem;
 }
@@ -603,15 +603,30 @@ template {
   background-color: #98caa3;
 }
 
+.daily-mobile {
+  font-family: "Raleway", sans-serif;
+  padding-left: 15px;
+}
+
+@media (min-width: 768px) {
+  .daily-mobile {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    align-content: flex-start;
+  }
+
+  .daily-header,
+.mobile-header {
+    padding-top: 15px;
+    padding-bottom: 15px;
+  }
+}
 @media (min-width: 1024px) {
   .traffic-header {
     padding-top: 30px;
     padding-bottom: 30px;
-  }
-
-  .daily-header, .mobile-header {
-    padding: 30px 15px;
-    font-family: "Raleway", sans-serif;
   }
 
   #traffic-chart {

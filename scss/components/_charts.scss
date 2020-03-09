@@ -1,5 +1,5 @@
 /* ============================================= */
-/*             Traffic & Daily Charts            */
+/*             Traffic,  Daily & mobile Charts            */
 /* ============================================= */
 
 .traffic-header {
@@ -14,7 +14,7 @@
   & li {
     padding: $padding-s $padding-s;
     list-style: none;
-    border-radius: 5px;
+    border-radius: 15px;
     margin-left: 3px;
     font-size: $font-size-s;
   }
@@ -23,22 +23,31 @@
   }
 }
 
+.daily-mobile {
+     font-family: $primary-font;
+     padding-left: $padding-m;
+}
+
+@media (min-width: 768px) {
+  .daily-mobile {
+    @include flexy();
+  }
+
+  .daily-header,
+  .mobile-header {
+    padding-top: $padding-m;
+    padding-bottom: $padding-m;
+     }
+}
+
 @media (min-width: 1024px) {
   .traffic-header {
     padding-top: $padding-l;
     padding-bottom: $padding-l;
   }
 
-  .daily-header, .mobile-header {
-    
-    padding: $padding-l $padding-m;
-      font-family: $primary-font;
-    }
-
-    #traffic-chart {
-       padding-left: $padding-l;
-         padding-right: $padding-l;
-    }
+  #traffic-chart {
+    padding-left: $padding-l;
+    padding-right: $padding-l;
+  }
 }
-
-
