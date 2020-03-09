@@ -347,6 +347,9 @@ template {
 /*              Variables             */
 /* ============================================= */
 /* ============================================= */
+/*             Mixins                            */
+/* ============================================= */
+/* ============================================= */
 /*              Grid                             */
 /* ============================================= */
 .grid-container {
@@ -568,6 +571,9 @@ template {
   letter-spacing: 1.5px;
 }
 
+/* ============================================= */
+/*             Traffic & Daily Charts            */
+/* ============================================= */
 .traffic-header {
   display: flex;
   flex-direction: row;
@@ -595,6 +601,23 @@ template {
 }
 .traffic-nav li:hover {
   background-color: #98caa3;
+}
+
+@media (min-width: 1024px) {
+  .traffic-header {
+    padding-top: 30px;
+    padding-bottom: 30px;
+  }
+
+  .daily-header, .mobile-header {
+    padding: 30px 15px;
+    font-family: "Raleway", sans-serif;
+  }
+
+  #traffic-chart {
+    padding-left: 30px;
+    padding-right: 30px;
+  }
 }
 
 /*# sourceMappingURL=style.css.map */

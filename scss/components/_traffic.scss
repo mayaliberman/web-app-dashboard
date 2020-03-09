@@ -1,22 +1,44 @@
+/* ============================================= */
+/*             Traffic & Daily Charts            */
+/* ============================================= */
+
 .traffic-header {
   @include flexy($justify: space-between);
   padding-left: $padding-m;
   padding-right: $padding-m;
   font-family: $primary-font;
-
-  
 }
 
 .traffic-nav {
   @include flexy();
   & li {
-   padding: $padding-s $padding-s;
+    padding: $padding-s $padding-s;
     list-style: none;
     border-radius: 5px;
     margin-left: 3px;
     font-size: $font-size-s;
   }
   & li:hover {
-      background-color: $green-color;
-  } 
+    background-color: $green-color;
+  }
 }
+
+@media (min-width: 1024px) {
+  .traffic-header {
+    padding-top: $padding-l;
+    padding-bottom: $padding-l;
+  }
+
+  .daily-header, .mobile-header {
+    
+    padding: $padding-l $padding-m;
+      font-family: $primary-font;
+    }
+
+    #traffic-chart {
+       padding-left: $padding-l;
+         padding-right: $padding-l;
+    }
+}
+
+
