@@ -1,0 +1,22 @@
+.traffic-header {
+  @include flexy($justify: space-between);
+  padding-left: $padding-m;
+  padding-right: $padding-m;
+  font-family: $primary-font;
+
+  
+}
+
+.traffic-nav {
+  @include flexy();
+  & li {
+   padding: $padding-s $padding-s;
+    list-style: none;
+    border-radius: 5px;
+    margin-left: 3px;
+    font-size: $font-size-s;
+  }
+  & li:hover {
+      background-color: $green-color;
+  } 
+}

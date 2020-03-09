@@ -38,7 +38,7 @@ let trafficData = {
   datasets: [
     {
       data: [750, 1250, 1000, 2000, 1500, 1750, 1250, 1850, 2250, 1500, 2500],
-      backgroundColor: "rgba(61, 113, 153, .3)",
+      backgroundColor: "rgba(219,219,238, .7)",
       borderWidth: 2
     }
   ]

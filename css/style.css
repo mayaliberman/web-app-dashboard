@@ -344,6 +344,9 @@ template {
 }
 
 /* ============================================= */
+/*              Variables             */
+/* ============================================= */
+/* ============================================= */
 /*              Grid                             */
 /* ============================================= */
 .grid-container {
@@ -395,13 +398,17 @@ template {
     width: 45vw;
   }
 }
+/* ============================================= */
+/*             Header             */
+/* ============================================= */
 .header {
-  background-color: #3D7199;
+  background-color: #7679c1;
   display: flex;
   padding: 5px 3%;
   justify-content: space-between;
-  color: #fff;
+  color: #fcfcfc;
   align-items: center;
+  font-family: "Raleway", sans-serif;
 }
 
 .account {
@@ -414,7 +421,7 @@ template {
 .account .profile-image {
   width: 30px;
   height: 30px;
-  padding: 0px;
+  padding-left: 10px;
 }
 
 .profile-image {
@@ -422,9 +429,12 @@ template {
 }
 
 .bell-image {
-  padding-right: 27px;
+  height: 30px;
+  width: 30px;
+  padding-right: 10px;
   padding-bottom: 10px;
   padding-top: 10px;
+  border-right: 1px solid #8d8c8c;
 }
 
 .profile-name {
@@ -432,12 +442,31 @@ template {
   font-size: 0.8rem;
 }
 
+@media (min-width: 1024px) {
+  .header {
+    font-size: 1.2rem;
+  }
+}
+/* ============================================= */
+/*             Navigation                        */
+/* ============================================= */
 .navigation {
   grid-area: navigation;
-  background-color: #40428D;
+  background-color: #4d4d72;
   display: flex;
+  flex-direction: flex;
   justify-content: center;
+  align-items: center;
+  align-content: flex-start;
   min-height: 60px;
+}
+
+.navigation a:hover {
+  border-bottom: 3px solid #98caa3;
+}
+
+.navigation a:active {
+  border-bottom: 3px solid #98caa3;
 }
 
 .dashboard,
@@ -452,13 +481,120 @@ template {
   .navigation {
     flex-direction: column;
     justify-content: flex-start;
-    padding: 10px;
+    padding-top: 30px;
   }
 
-  .navigation a img {
-    padding: 5px;
-    margin-top: 20px;
+  .navigation a:hover {
+    border-bottom: 0px;
+    border-left: 3px solid #98caa3;
   }
+
+  .navigation a:active {
+    border-left: 3px solid #98caa3;
+  }
+}
+/* ============================================= */
+/*              Main Header             */
+/* ============================================= */
+.main-header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  align-content: flex-start;
+  padding-left: 15px;
+  font-family: "Raleway", sans-serif;
+}
+
+.headline {
+  display: inline-block;
+  padding-right: 15px;
+}
+
+.main-header-search {
+  padding-right: 15px;
+}
+
+.main-header-search input {
+  padding: 10px;
+  border: 1px solid #b3b2b2;
+  border-radius: 5px;
+  outline: 0;
+  text-align: left;
+}
+
+@media (min-width: 768px) {
+  .main-header {
+    justify-content: space-between;
+  }
+
+  .main-header-search {
+    padding-right: 15px;
+    margin: 0px;
+  }
+}
+@media (min-width: 1024px) {
+  .headeline {
+    flex-grow: 1;
+  }
+
+  .main-header-search {
+    flex-grow: 5;
+    padding: 20px;
+    border-bottom: 1px solid #dbdbee;
+    border-left: 1px solid #dbdbee;
+  }
+
+  .main-header-search input {
+    float: right;
+    padding: 15px 200px 15px 10px;
+  }
+}
+/* ============================================= */
+/*             Alert            */
+/* ============================================= */
+.alert-banner {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  align-content: flex-start;
+  padding: 10px 15px;
+  background-color: #7679c1;
+  margin: 15px;
+  border-radius: 5px;
+  color: #fcfcfc;
+  font-family: "Raleway", sans-serif;
+  letter-spacing: 1.5px;
+}
+
+.traffic-header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  align-content: flex-start;
+  padding-left: 15px;
+  padding-right: 15px;
+  font-family: "Raleway", sans-serif;
+}
+
+.traffic-nav {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  align-content: flex-start;
+}
+.traffic-nav li {
+  padding: 10px 10px;
+  list-style: none;
+  border-radius: 5px;
+  margin-left: 3px;
+  font-size: 0.8rem;
+}
+.traffic-nav li:hover {
+  background-color: #98caa3;
 }
 
 /*# sourceMappingURL=style.css.map */

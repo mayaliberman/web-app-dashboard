@@ -1,3 +1,7 @@
+/* ============================================= */
+/*             Header             */
+/* ============================================= */
+
 .header {
   background-color: $primary-color;
   display: flex;
@@ -5,6 +9,8 @@
   justify-content: space-between;
   color: $white;
   align-items: center;
+  font-family: $primary-font;
+  
 }
 
 .account {
@@ -17,25 +23,30 @@
 .account .profile-image {
   width: 30px;
   height: 30px;
-  padding: 0px;
+  padding-left: $padding-s;
 }
 .profile-image {
   border-radius: 50%;
 }
 
 .bell-image  {
-
-  padding-right: 27px;
-  padding-bottom: 10px;
-  padding-top: 10px;
+ height: 30px;
+  width: 30px; 
+  padding-right: $padding-s;
+  padding-bottom: $padding-s;
+  padding-top: $padding-s;
+  border-right: 1px solid darken($grey-color, 15);
 }
 
-// .bell-image svg {
-//    height: 50px;
-//   width: 50px; 
-// }
+
 
 .profile-name {
-  padding-left: 10px;
-  font-size: 0.8rem;
+  padding-left: $padding-s;
+  font-size: $font-size-s;
+}
+
+@media(min-width: 1024px) {
+  .header {
+font-size: $font-size-l;
+  }
 }
