@@ -39,7 +39,11 @@ let trafficData = {
     {
       data: [750, 1250, 1000, 2000, 1500, 1750, 1250, 1850, 2250, 1500, 2500],
       backgroundColor: "rgba(219,219,238, .7)",
-      borderWidth: 2
+      borderWidth: 2,
+      lineTension: 0,
+      pointBackgroundColor: "#fff",
+      pointBorderColor: "#7679c1",
+      pointRadius: 4
     }
   ]
 };

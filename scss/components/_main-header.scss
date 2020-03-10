@@ -14,16 +14,16 @@
 }
 
 .main-header-search {
-    padding-right: $padding-m;
+  padding-right: $padding-m;
+  width: 100%;
 }
-
 
 .main-header-search input {
   padding: $padding-s;
   border: 1px solid $grey-color;
   border-radius: 5px;
   outline: 0;
-  text-align: left;
+  width: 100%;
 }
 @media (min-width: 768px) {
   .main-header {
@@ -32,21 +32,22 @@
   .main-header-search {
     padding-right: $padding-m;
     margin: 0px;
+    width: 50%;
   }
 }
 @media (min-width: 1024px) {
-    .headeline {
-        flex-grow: 1;
-    }
+  .headeline {
+    flex-grow: 1;
+  }
   .main-header-search {
     flex-grow: 5;
     padding: 20px;
-   
     border-bottom: 1px solid $search-color;
     border-left: 1px solid $search-color;
   }
   .main-header-search input {
     float: right;
-        padding: $padding-m 200px $padding-m $padding-s;
+    padding: $padding-m 200px $padding-m $padding-s;
+    width: 40%;
   }
 }
