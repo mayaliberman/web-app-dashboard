@@ -10,11 +10,10 @@
   color: $white;
   align-items: center;
   font-family: $primary-font;
-  
 }
 
 .account {
-  @include flexy ($wrap: nowrap, $justify: space-between);
+  @include flexy($wrap: nowrap, $justify: space-between);
   font-weight: 500;
   letter-spacing: 1.5px;
 }
@@ -28,16 +27,14 @@
   border-radius: 50%;
 }
 
-.bell-image  {
- height: 30px;
-  width: 30px; 
+.bell-image {
+  height: 30px;
+  width: 30px;
   padding-right: $padding-s;
   padding-bottom: $padding-s;
   padding-top: $padding-s;
   border-right: 1px solid darken($grey-color, 15);
 }
-
-
 
 .profile-name {
   padding-left: $padding-s;
@@ -45,8 +42,8 @@
   text-align: center;
 }
 
-@media(min-width: 1024px) {
+@media (min-width: $media-l) {
   .header {
-font-size: $font-size-l;
+    font-size: $font-size-l;
   }
 }

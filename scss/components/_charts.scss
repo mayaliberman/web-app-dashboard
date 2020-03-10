@@ -11,11 +11,10 @@
 
 .traffic-nav {
   padding-left: 0px;
-  
+
   @include flexy($wrap: nowrap);
   & li {
     padding: $padding-s $padding-s;
-    
     list-style: none;
     border-radius: 15px;
     margin-left: 3px;
@@ -24,44 +23,44 @@
     color: $side-nav-color;
   }
 
-  
   & li:hover {
     background-color: $green-color;
+    color: $white;
   }
 }
 
 .daily-mobile {
-     font-family: $primary-font;
- 
+  font-family: $primary-font;
 }
 
-.daily-header, .mobile-header {
+.daily-header,
+.mobile-header {
   padding-left: $padding-m;
 }
 
-@media (min-width: 768px) {
+.daily > .widget-container-half {
+  margin: 0 auto;
+}
+
+@media (min-width: $media-m) {
   .daily-mobile {
     @include flexy($justify: space-between);
-   
   }
 
   .traffic-nav li {
     padding: $padding-s $padding-m;
-     font-size: $font-size-s;
+    font-size: $font-size-s;
   }
 
   .daily-header,
   .mobile-header {
     padding-top: $padding-m;
-    padding-bottom: $padding-m;
-     }
+    padding-bottom: $padding-l;
+  }
 
-     #daily-chart {
-       padding-left: $padding-m;
-     }
 }
 
-@media (min-width: 1024px) {
+@media (min-width: $media-l) {
   .traffic-header {
     padding-top: $padding-l;
     padding-bottom: $padding-l;
@@ -70,11 +69,5 @@
   .traffic-nav li {
     padding: $padding-s $padding-l;
   }
-  
-  #traffic-chart {
-    padding-left: $padding-m;
-    padding-right: $padding-m;
-  }
 
-  
 }

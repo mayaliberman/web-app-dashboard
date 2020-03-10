@@ -395,10 +395,12 @@ template {
 
   .widget-container-full {
     width: 90vw;
+    margin: 0 auto;
   }
 
   .widget-container-half {
     width: 45vw;
+    margin: 0 auto;
   }
 }
 /* ============================================= */
@@ -471,11 +473,11 @@ template {
 }
 
 .navigation a:hover {
-  border-bottom: 3px solid #98caa3;
+  border-bottom: 3px solid #78cf82;
 }
 
 .navigation a:active {
-  border-bottom: 3px solid #98caa3;
+  border-bottom: 3px solid #78cf82;
 }
 
 .dashboard,
@@ -495,11 +497,11 @@ template {
 
   .navigation a:hover {
     border-bottom: 0px;
-    border-left: 3px solid #98caa3;
+    border-left: 3px solid #78cf82;
   }
 
   .navigation a:active {
-    border-left: 3px solid #98caa3;
+    border-left: 3px solid #78cf82;
   }
 }
 /* ============================================= */
@@ -622,15 +624,21 @@ template {
   color: #4d4d72;
 }
 .traffic-nav li:hover {
-  background-color: #98caa3;
+  background-color: #78cf82;
+  color: #fcfcfc;
 }
 
 .daily-mobile {
   font-family: "Raleway", sans-serif;
 }
 
-.daily-header, .mobile-header {
+.daily-header,
+.mobile-header {
   padding-left: 15px;
+}
+
+.daily > .widget-container-half {
+  margin: 0 auto;
 }
 
 @media (min-width: 768px) {
@@ -651,11 +659,7 @@ template {
   .daily-header,
 .mobile-header {
     padding-top: 15px;
-    padding-bottom: 15px;
-  }
-
-  #daily-chart {
-    padding-left: 15px;
+    padding-bottom: 30px;
   }
 }
 @media (min-width: 1024px) {
@@ -666,11 +670,6 @@ template {
 
   .traffic-nav li {
     padding: 10px 30px;
-  }
-
-  #traffic-chart {
-    padding-left: 15px;
-    padding-right: 15px;
   }
 }
 

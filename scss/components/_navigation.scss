@@ -25,7 +25,7 @@
   padding: $padding-m;
 }
 
-@media (min-width: 768px) {
+@media (min-width: $media-m) {
   .navigation {
     flex-direction: column;
     justify-content: flex-start;

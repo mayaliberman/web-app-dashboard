@@ -4,8 +4,7 @@
 
 .alert-banner {
     @include flexy($justify: space-between, $wrap: nowrap);
-    
-    padding: 10px 15px;
+        padding: 10px 15px;
     background-color: $primary-color;
     margin: 15px;
     border-radius: 5px;
@@ -15,7 +14,7 @@
     font-size: $font-size-xs;
 }
 
-@media(min-width: 768px) {
+@media(min-width: $media-m) {
     .alert-banner {
         font-size: $font-size-s;
     }
