@@ -39,8 +39,8 @@
 }
 
 .social-image {
-    padding-right: 15px;
-    padding-left: 20px;
+  padding-right: 15px;
+  padding-left: 20px;
 }
 
 @media (min-width: $media-m) {
@@ -53,8 +53,12 @@
 }
 
 @media (min-width: $media-l) {
+  .social-text p:nth-child(1) {
+    font-size: 1.5rem;
+  }
   .social-text p:nth-child(2) {
-    font-size: 1.8rem;
+    font-size: 2.6rem;
+    color: #333;
   }
   .social-icons {
     padding: $padding-m $padding-m;
@@ -75,5 +79,5 @@
   .social-image {
     padding-right: 40px;
     padding-left: 30px;
-}
+  }
 }
