@@ -5,7 +5,7 @@
 .main-header {
   @include flexy($justify: space-between);
   padding-left: $padding-m;
-  font-family: $primary-font;
+  
 }
 
 .headline {

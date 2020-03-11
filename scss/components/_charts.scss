@@ -1,12 +1,14 @@
 /* ============================================= */
 /*             Traffic,  Daily & mobile Charts            */
 /* ============================================= */
+canvas {
+  width: 100% !important;
+}
 
 .traffic-header {
   @include flexy($justify: space-between, $wrap: nowrap);
   padding-left: $padding-m;
   padding-right: $padding-m;
-  font-family: $primary-font;
 }
 
 .traffic-nav {
@@ -29,22 +31,25 @@
   }
 }
 
-.daily-mobile {
-  font-family: $primary-font;
-}
-
 .daily-header,
 .mobile-header {
   padding-left: $padding-m;
 }
 
-.daily > .widget-container-half {
-  margin: 0 auto;
-}
-
 @media (min-width: $media-m) {
+  .traffic {
+    padding-bottom: $padding-xl;
+  }
   .daily-mobile {
     @include flexy($justify: space-between);
+    border-top: 1px solid $search-color;
+    border-bottom: 1px solid $search-color;
+  }
+
+  .mobile {
+    border-left: 1px solid $search-color;
+    padding-top: $padding-l;
+    padding-bottom: $padding-xl;
   }
 
   .traffic-nav li {
@@ -54,10 +59,8 @@
 
   .daily-header,
   .mobile-header {
-    padding-top: $padding-m;
     padding-bottom: $padding-l;
   }
-
 }
 
 @media (min-width: $media-l) {
@@ -69,5 +72,4 @@
   .traffic-nav li {
     padding: $padding-s $padding-l;
   }
-
 }

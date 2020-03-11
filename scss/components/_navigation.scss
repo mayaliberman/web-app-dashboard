@@ -5,16 +5,7 @@
 .navigation {
   grid-area: navigation;
   background-color: $side-nav-color;
-  @include flexy(flex, center);
-    min-height: 60px;
-}
-
-.navigation a:hover {
-  border-bottom: 3px solid $green-color;
-}
-
-.navigation a:active {
-  border-bottom: 3px solid $green-color;
+  @include flexy();
 }
 
 .dashboard,
@@ -22,7 +13,7 @@
 .memebers,
 .visits {
   width: 40px;
-  padding: $padding-m;
+  padding: 15px;
 }
 
 @media (min-width: $media-m) {
@@ -32,12 +23,10 @@
     padding-top: 30px;
   }
 
-  .navigation a:hover {
-    border-bottom: 0px;
-    border-left: 3px solid $green-color;
-  }
-
-  .navigation a:active {
-    border-left: 3px solid $green-color;
+  .dashboard,
+  .settings,
+  .memebers,
+  .visits {
+    width: 40px;
   }
 }

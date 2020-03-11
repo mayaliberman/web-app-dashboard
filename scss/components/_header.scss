@@ -9,7 +9,7 @@
   justify-content: space-between;
   color: $white;
   align-items: center;
-  font-family: $primary-font;
+  
 }
 
 .account {
@@ -31,10 +31,16 @@
   height: 30px;
   width: 30px;
   padding-right: $padding-s;
-  padding-bottom: $padding-s;
-  padding-top: $padding-s;
+  margin-bottom: $padding-s;
+  margin-top: $padding-s;
   border-right: 1px solid darken($grey-color, 15);
 }
+
+.account svg {
+    transform: scale(0.8);
+  }
+
+
 
 .profile-name {
   padding-left: $padding-s;
@@ -42,8 +48,16 @@
   text-align: center;
 }
 
+@media(min-width: $media-m) {
+ .account svg {
+    transform: scale(1);
+  }
+}
+
 @media (min-width: $media-l) {
   .header {
     font-size: $font-size-l;
   }
+  
+ 
 }
