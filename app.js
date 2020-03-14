@@ -167,16 +167,78 @@ send.addEventListener("click", e => {
 
 window.addEventListener("load", async () => {
   try {
-    const response = await fetch(`https://randomuser.me/api/?nat=gb&results=10`);
+    const response = await fetch(`https://randomuser.me/api/?nat=gb&results=8`);
     const responseJson = await response.json();
-    console.log(responseJson.results);
-    // const profiles = getProfiles(responseJson);
-    // generateCards(profiles);
+    const profiles = getProfiles(responseJson);
+    generateMembers(profiles);
+    generateRecentMembers(profiles);
   } catch (err) {
     document.write("Something went wrong");
     console.log(err);
   }
 });
 
+const getProfiles = json => {
+  const profileArr = [];
+  json.results.forEach(person => {
+    profileArr.push(getSingleProfile(person));
+  });
+  return profileArr;
+};
 
+const getSingleProfile = profile => {
+  const { first, last } = profile.name;
+  const thumbnail = profile.picture.thumbnail;
+  const email = profile.email;
+  const date = formatDate(profile.registered.date);
 
+  return {
+    first,
+    last,
+    email,
+    thumbnail,
+    date
+  };
+};
+
+const generateMembers = profiles => {
+  const members = document.querySelector(".members");
+  profiles.forEach((profile, index) => {
+        if (index < profiles.length / 2) {
+      const { first, last, email, thumbnail, date } = profile;
+      const membersContainer = document.createElement("div");
+      membersContainer.className += "members-container";
+      members.appendChild(membersContainer);
+      membersContainer.innerHTML = `<img src=${thumbnail} alt="" class="profile-image">
+                    <div class="members-text">
+                        <p>${first} ${last}</p>
+                        <a href="#">${email}</a>
+                    </div>
+                    <p>${date}</p>`;
+    }
+  });
+};
+
+const generateRecentMembers = profiles => {
+  const recent = document.querySelector(".recent-activity");
+  const recentProfiles = profiles.slice(profiles.length / 2);
+    recentProfiles.forEach((profile) => {
+    const { first, last, email, thumbnail } = profile;
+    const membersContainer = document.createElement("div");
+    membersContainer.className += "members-container";
+    recent.appendChild(membersContainer);
+    membersContainer.innerHTML = `<img src="${thumbnail}" alt="" class="profile-image">
+                    <div class="recent-text">
+                        <p>${first} ${last}</p>
+                        <a href="#">${email}</a>
+                    </div>
+                    <p class="read-more">></p>`;
+
+  });
+}
+
+function formatDate(date) {
+  const newDate = new Date(date);
+  const newEvent = newDate.toLocaleDateString("en-US");
+  return newEvent;
+}

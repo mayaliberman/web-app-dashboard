@@ -1,10 +1,14 @@
+/* ============================================= */
+/*            Socila                             */
+/* ============================================= */
+
 .social-icons {
   @include flexy();
-  padding: $padding-m $padding-xl;
+  padding: 0 $padding-xl $padding-m $padding-xl;
 }
 
 .social-header {
-  padding: $padding-l 0 $padding-l $padding-m;
+  padding: $padding-l 0 0 $padding-m;
 }
 
 .twitter,
@@ -54,22 +58,24 @@
 
 @media (min-width: $media-l) {
   .social-text p:nth-child(1) {
-    font-size: 1.5rem;
+    font-size: 1.2rem;
   }
   .social-text p:nth-child(2) {
-    font-size: 2.6rem;
+    font-size: 1.4rem;
     color: #333;
   }
   .social-icons {
-    padding: $padding-m $padding-m;
+    padding: $padding-m $padding-m $padding-l $padding-m;
+        justify-content: space-evenly;
   }
   .google,
   .twitter,
   .facebook {
     flex-basis: auto;
-    padding: $padding-m 60px;
-    margin-left: $padding-l;
-    margin-right: $padding-l;
+    padding-right: 80px;
+    padding-left: 80px;
+    // margin-left: $padding-s;
+    // margin-right: $padding-s;
   }
 
   .social-image svg {

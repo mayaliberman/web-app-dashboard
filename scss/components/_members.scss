@@ -22,9 +22,11 @@
   width: 50px;
   padding-top: $padding-s;
   padding-bottom: $padding-s;
+  
 }
 
-.members-text {
+.members-text,
+.recent-text {
   line-height: 0.8;
 }
 
@@ -38,14 +40,35 @@ a {
   color: $primary-color;
   font-size: $font-size-l;
   font-weight: bold;
+  
 }
 
-@media(min-width: $media-m) {
-    .users {
-        @include flexy($align: flex-start, $justify: space-between);
-        border-bottom: 1px solid $search-color;
-        border-top: 1px solid $search-color;
-        padding-top: $padding-m;
-        padding-bottom: $padding-m;
-    }
+
+@media (min-width: $media-m) {
+  .users {
+    border-bottom: 1px solid $search-color;
+    border-top: 1px solid $search-color;
+    padding-top: $padding-m;
+    padding-bottom: $padding-m;
+  }
+
+  .members,
+  .recent-activity {
+    flex-basis: 49.9%;
+    justify-content: space-between;
+  }
+
+  .members {
+    border-right: 1px solid $search-color;
+  }
+}
+
+@media (min-width: $media-l) {
+  .users {
+    @include flexy($align: flex-start, $justify: flex-start);
+  }
+
+  .members-text {
+    flex-basis: 40%;
+  }
 }
