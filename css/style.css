@@ -343,6 +343,9 @@ template {
   display: none;
 }
 
+/* ============================================= */
+/*              Variables             */
+/* ============================================= */
 * {
   font-family: "Roboto", sans-serif;
 }
@@ -357,9 +360,10 @@ h3 {
   text-transform: uppercase;
 }
 
-/* ============================================= */
-/*              Variables             */
-/* ============================================= */
+body {
+  color: #131415;
+}
+
 /* ============================================= */
 /*             Mixins                            */
 /* ============================================= */
@@ -440,14 +444,10 @@ h3 {
   letter-spacing: 1.5px;
 }
 
-.account .profile-image {
-  width: 30px;
-  height: 30px;
-  padding-left: 10px;
-}
-
-.profile-image {
+.account > .profile-image {
   border-radius: 50%;
+  width: 30px;
+  padding-left: 10px;
 }
 
 .bell-image {
@@ -786,6 +786,66 @@ canvas {
   .social-image {
     padding-right: 40px;
     padding-left: 30px;
+  }
+}
+/* ============================================= */
+/*             Members                           */
+/* ============================================= */
+.members-header,
+.recent-header {
+  padding-left: 15px;
+}
+
+.members-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-start;
+  align-content: flex-start;
+  flex-wrap: wrap;
+  padding: 15px;
+  border-bottom: 1px solid #dbdbee;
+}
+
+.members-container:last-child {
+  border-bottom: 0px solid transparent;
+}
+
+.members-container > .profile-image {
+  border-radius: 50%;
+  width: 50px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.members-text {
+  line-height: 0.8;
+}
+
+a {
+  color: #7679c1;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.read-more {
+  color: #7679c1;
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+@media (min-width: 768px) {
+  .users {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+    align-content: flex-start;
+    flex-wrap: wrap;
+    border-bottom: 1px solid #dbdbee;
+    border-top: 1px solid #dbdbee;
+    padding-top: 15px;
+    padding-bottom: 15px;
   }
 }
 

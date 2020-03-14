@@ -1,0 +1,51 @@
+/* ============================================= */
+/*             Members                           */
+/* ============================================= */
+
+.members-header,
+.recent-header {
+  padding-left: $padding-m;
+}
+
+.members-container {
+  @include flexy($justify: space-between, $align: flex-start);
+  padding: $padding-m;
+  border-bottom: 1px solid $search-color;
+}
+
+.members-container:last-child {
+  border-bottom: 0px solid transparent;
+}
+
+.members-container > .profile-image {
+  border-radius: 50%;
+  width: 50px;
+  padding-top: $padding-s;
+  padding-bottom: $padding-s;
+}
+
+.members-text {
+  line-height: 0.8;
+}
+
+a {
+  color: $primary-color;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.read-more {
+  color: $primary-color;
+  font-size: $font-size-l;
+  font-weight: bold;
+}
+
+@media(min-width: $media-m) {
+    .users {
+        @include flexy($align: flex-start, $justify: space-between);
+        border-bottom: 1px solid $search-color;
+        border-top: 1px solid $search-color;
+        padding-top: $padding-m;
+        padding-bottom: $padding-m;
+    }
+}

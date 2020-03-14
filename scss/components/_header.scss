@@ -19,15 +19,13 @@
 
 }
 
-.account .profile-image {
+.account > .profile-image {
+  border-radius: 50%;
   width: 30px;
-  height: 30px;
   padding-left: $padding-s;
   
 }
-.profile-image {
-  border-radius: 50%;
-}
+
 
 .bell-image {
   height: 30px;

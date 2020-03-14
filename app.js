@@ -64,8 +64,7 @@ let trafficOptions = {
   },
   legend: {
     display: false
-  },
-  
+  }
 };
 
 let trafficChart = new Chart(trafficCanvas, {
@@ -149,8 +148,8 @@ const user = document.getElementById("userField");
 const message = document.getElementById("messageField");
 const send = document.getElementById("send");
 
-send.addEventListener("click", (e) => {
-    e.preventDefault();
+send.addEventListener("click", e => {
+  e.preventDefault();
   if (user.value === "" && message.value === "") {
     alert("Please fill out user and message fields before sending");
   } else if (user.value === "") {
@@ -159,7 +158,25 @@ send.addEventListener("click", (e) => {
     alert("Please fill out message before sending");
   } else {
     alert(`Message successfully sned to ${user.value}`);
-    }
-    user.value = '';
-    message.value = '';
+  }
+  user.value = "";
+  message.value = "";
 });
+
+// GET USERS JSON
+
+window.addEventListener("load", async () => {
+  try {
+    const response = await fetch(`https://randomuser.me/api/?nat=gb&results=10`);
+    const responseJson = await response.json();
+    console.log(responseJson.results);
+    // const profiles = getProfiles(responseJson);
+    // generateCards(profiles);
+  } catch (err) {
+    document.write("Something went wrong");
+    console.log(err);
+  }
+});
+
+
+

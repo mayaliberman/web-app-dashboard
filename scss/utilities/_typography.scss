@@ -1,6 +1,7 @@
 
 * {
     font-family: 'Roboto', sans-serif;
+    
    
 }
 
@@ -9,7 +10,11 @@ h2 {
     font-size: 1.8rem;
 }
 h3 {
-    color: #4d4d72;
+    color: $side-nav-color;
     font-size: 1.4rem;
      text-transform: uppercase;
+}
+
+body {
+    color: $black;
 }
