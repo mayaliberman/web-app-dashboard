@@ -893,7 +893,7 @@ select {
 }
 
 textarea {
-  height: 143px;
+  height: 147px;
 }
 
 .settings-container {
@@ -947,7 +947,7 @@ textarea {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    align-items: flex-start;
+    align-items: center;
     align-content: flex-start;
     flex-wrap: wrap;
   }
@@ -972,6 +972,7 @@ textarea {
   align-items: center;
   align-content: flex-start;
   flex-wrap: wrap;
+  height: 90px;
 }
 
 .switches-section p {

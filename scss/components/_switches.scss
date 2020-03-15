@@ -2,23 +2,23 @@
 /*            Switches                           */
 /* ============================================= */
 .switch-container {
-    @include flexy($justify: flex-start);
-    
+  @include flexy($justify: flex-start);
+  height: 90px;
 }
 
 .switches-section p {
-    display: inline-block;
-    
-    width: 200px;
+  display: inline-block;
+
+  width: 200px;
 }
 .switch {
   position: relative;
-    display: inline-block;
+  display: inline-block;
   width: 60px;
   height: 34px;
 }
 
-.switch input { 
+.switch input {
   opacity: 0;
   width: 0;
   height: 0;
@@ -32,8 +32,8 @@
   right: 0;
   bottom: 0;
   background-color: $grey-color;
-  -webkit-transition: .4s;
-  transition: .4s;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
 }
 
 .slider:before {
@@ -44,8 +44,8 @@
   left: 4px;
   bottom: 4px;
   background-color: $white;
-  -webkit-transition: .4s;
-  transition: .4s;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
 }
 
 input:checked + .slider {
@@ -71,6 +71,5 @@ input:checked + .slider:before {
   border-radius: 50%;
 }
 
-@media(min-width: $media-l) {
-
+@media (min-width: $media-l) {
 }

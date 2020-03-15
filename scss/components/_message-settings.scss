@@ -23,7 +23,7 @@ select {
 }
 
 textarea {
-  height: 143px;
+  height: 147px;
 }
 
 .settings-container {
@@ -70,10 +70,11 @@ textarea {
 
 @media (min-width: $media-m) {
   .message-settings {
-    @include flexy($justify: space-between, $align: flex-start);
+    @include flexy($justify: space-between);
   }
 
   .settings-container {
+    
     width: 50%;
     padding-top: 0;
   }

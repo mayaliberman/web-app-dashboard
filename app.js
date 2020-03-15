@@ -48,6 +48,7 @@ let trafficData = {
   ]
 };
 
+
 let trafficOptions = {
   aspectRatio: 2.5,
   animation: {
@@ -72,6 +73,10 @@ let trafficChart = new Chart(trafficCanvas, {
   data: trafficData,
   options: trafficOptions
 });
+
+const { data } = trafficData.datasets[0];
+console.log(data);
+const hourly = document.querySelector
 
 //DAILY CHART
 

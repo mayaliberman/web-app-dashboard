@@ -2,12 +2,17 @@
 /*             Mixins                            */
 /* ============================================= */
 
-
-@mixin flexy($direction: row, $justify: center, $align: center, $start:flex-start, $wrap: wrap) {
+@mixin flexy(
+  $direction: row,
+  $justify: center,
+  $align: center,
+  $start: flex-start,
+  $wrap: wrap
+) {
   display: flex;
   flex-direction: $direction;
   justify-content: $justify;
   align-items: $align;
-align-content: $start;
-flex-wrap: $wrap;
+  align-content: $start;
+  flex-wrap: $wrap;
 }
