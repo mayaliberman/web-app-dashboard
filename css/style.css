@@ -406,8 +406,7 @@ body {
   }
 
   .daily,
-.members,
-.message {
+.members {
     grid-column: 1/span 1;
   }
 
@@ -688,6 +687,9 @@ canvas {
     padding: 10px 30px;
   }
 }
+/* ============================================= */
+/*            Socila                             */
+/* ============================================= */
 .social-icons {
   display: flex;
   flex-direction: row;
@@ -865,6 +867,176 @@ a {
   .members-text {
     flex-basis: 40%;
   }
+}
+/* ============================================= */
+/*            Message & Settings                 */
+/* ============================================= */
+.message, .settings-container {
+  padding-bottom: 15px;
+  box-sizing: border-box;
+}
+
+.message-header {
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+input,
+textarea,
+select {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  border-radius: 5px;
+  border: 1px solid #b3b2b2;
+}
+
+textarea {
+  height: 143px;
+}
+
+.settings-container {
+  padding: 30px 15px;
+}
+
+.settings-button {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  align-content: flex-start;
+  flex-wrap: wrap;
+}
+
+.button-primary,
+.button-disabled {
+  background-color: #7679c1;
+  border-radius: 5px;
+  color: #fcfcfc;
+  border: 1px solid transparent;
+  padding: 10px;
+  text-transform: uppercase;
+}
+
+.widget-container > .button-primary {
+  width: 100%;
+}
+
+.button-disabled {
+  background-color: #b3b2b2;
+  border-radius: 5px;
+  color: #fcfcfc;
+  border: 1px solid transparent;
+  padding: 10px;
+  text-transform: uppercase;
+  width: 50%;
+}
+
+.settings-button > .button-primary {
+  width: 45%;
+}
+
+.widget-container {
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+@media (min-width: 768px) {
+  .message-settings {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+    align-content: flex-start;
+    flex-wrap: wrap;
+  }
+
+  .settings-container {
+    width: 50%;
+    padding-top: 0;
+  }
+
+  .message {
+    width: 50%;
+    border-right: 1px solid #dbdbee;
+  }
+}
+/* ============================================= */
+/*            Switches                           */
+/* ============================================= */
+.switch-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  align-content: flex-start;
+  flex-wrap: wrap;
+}
+
+.switches-section p {
+  display: inline-block;
+  width: 200px;
+}
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #b3b2b2;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: #fcfcfc;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+
+input:checked + .slider {
+  background-color: #7679c1;
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px #7679c1;
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px);
+}
+
+/* Rounded sliders */
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
 }
 
 /*# sourceMappingURL=style.css.map */

@@ -1,0 +1,90 @@
+/* ============================================= */
+/*            Message & Settings                 */
+/* ============================================= */
+.message, .settings-container{
+    padding-bottom: $padding-m;
+     box-sizing: border-box;
+}
+.message-header
+ {
+  padding-left: $padding-m;
+  padding-right: $padding-m;
+}
+
+input,
+textarea,
+select {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  border-radius: 5px;
+  border: 1px solid $grey-color;
+}
+
+textarea {
+  height: 143px;
+}
+
+.settings-container {
+  padding: $padding-l $padding-m;
+}
+
+.settings-button {
+  @include flexy($justify: space-between);
+}
+
+.button-primary,
+.button-disabled {
+  background-color: $primary-color;
+  border-radius: 5px;
+  color: $white;
+  border: 1px solid transparent;
+  padding: $padding-s;
+  text-transform: uppercase;
+}
+
+.widget-container > .button-primary {
+  width: 100%;
+}
+
+.button-disabled {
+  background-color: $grey-color;
+  border-radius: 5px;
+  color: $white;
+  border: 1px solid transparent;
+  padding: $padding-s;
+  text-transform: uppercase;
+  width: 50%;
+}
+
+.settings-button > .button-primary {
+  width: 45%;
+}
+
+.widget-container {
+  padding-left: 15px;
+  padding-right: 15px;
+  
+}
+
+@media (min-width: $media-m) {
+  .message-settings {
+    @include flexy($justify: space-between, $align: flex-start);
+  }
+
+  .settings-container {
+    width: 50%;
+    padding-top: 0;
+  }
+
+  
+  .message {
+    width: 50%;
+    border-right: 1px solid $search-color;
+    
+  }
+   
+ 
+
+}

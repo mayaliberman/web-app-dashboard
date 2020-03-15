@@ -43,8 +43,9 @@
   }
 
   .daily,
-  .members,
-  .message {
+  .members
+  // .message
+  {
     grid-column: 1 / span 1;
   }
 

@@ -17,6 +17,7 @@
   "homepage": "https://github.com/mayaliberman/web-app-dashboard#readme",
   "description": "",
   "dependencies": {
+    "css-toggle-switch": "^4.1.0",
     "sass": "^1.26.2"
   }
 }
