@@ -639,6 +639,10 @@ canvas {
   background-color: #78cf82;
   color: #fcfcfc;
 }
+.traffic-nav li:active {
+  background-color: #7679c1;
+  color: #fcfcfc;
+}
 
 .daily-header,
 .mobile-header {

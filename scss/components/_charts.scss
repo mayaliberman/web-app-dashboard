@@ -29,6 +29,11 @@ canvas {
     background-color: $green-color;
     color: $white;
   }
+
+  & li:active {
+    background-color: $primary-color;
+    color: $white;
+  }
 }
 
 .daily-header,

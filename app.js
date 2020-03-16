@@ -17,7 +17,12 @@ alertBanner.addEventListener("click", e => {
 //***************************** */
 //CHART WIDEGTS
 //****************************** */
-
+const dataStatistic = {
+  hourly: [750, 1250, 1000, 2000, 1500, 1750, 1250, 1850, 2250, 1500, 2500],
+  daily: [250, 180, 900, 1500, 1100, 600, 2500, 3200, 4100, 1200, 900],
+  weekly: [2500, 1000, 3000, 2600, 800, 400, 1000, 1500, 1000, 2000, 2000],
+  monthly: [500, 2200, 1300, 600, 2020, 900, 400, 800, 3000, 2600, 1400]
+};
 //TRAFFIC CHART
 const trafficCanvas = document.getElementById("traffic-chart");
 
@@ -37,7 +42,7 @@ let trafficData = {
   ],
   datasets: [
     {
-      data: [750, 1250, 1000, 2000, 1500, 1750, 1250, 1850, 2250, 1500, 2500],
+      data: dataStatistic.hourly,
       backgroundColor: "rgba(219,219,238, .7)",
       borderWidth: 2,
       lineTension: 0,
@@ -74,9 +79,51 @@ let trafficChart = new Chart(trafficCanvas, {
   options: trafficOptions
 });
 
-const { data } = trafficData.datasets[0];
-console.log(data);
-const hourly = document.querySelector
+function addData(chart, data) {
+   chart.data.datasets.forEach(dataset => {
+    dataset.data = data;
+  });
+  chart.update();
+}
+
+function removeData(chart) {
+    chart.data.datasets.forEach(dataset => {
+    dataset.data = [];
+     });
+  chart.update();
+}
+
+let { data } = trafficData.datasets[0];
+
+const trafficNav = document.querySelector('.traffic-nav');
+const hourly = document.querySelectorAll(".traffic-nav li")[0];
+const daily = document.querySelectorAll('.traffic-nav li')[1];
+const weekly = document.querySelectorAll(".traffic-nav li")[2];
+const monthly = document.querySelectorAll(".traffic-nav li")[3];
+
+
+
+monthly.addEventListener('click', () => {
+  removeData(trafficChart);
+  addData(trafficChart, dataStatistic.monthly);
+  })
+
+weekly.addEventListener('click', () => {
+  removeData(trafficChart);
+  addData(trafficChart, dataStatistic.weekly);
+ });
+
+daily.addEventListener("click", () => {
+  removeData(trafficChart);
+  addData(trafficChart, dataStatistic.daily);
+  });
+
+hourly.addEventListener("click", () => {
+  removeData(trafficChart);
+  addData(trafficChart, dataStatistic.hourly);
+ });
+
+
 
 //DAILY CHART
 
