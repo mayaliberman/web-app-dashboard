@@ -57,7 +57,7 @@ let trafficData = {
 let trafficOptions = {
   aspectRatio: 2.5,
   animation: {
-    duration: 0
+    duration: 1000
   },
   scales: {
     yAxes: [
@@ -84,14 +84,17 @@ function addData(chart, data) {
     dataset.data = data;
   });
   chart.update();
+  
 }
 
+
 function removeData(chart) {
-    chart.data.datasets.forEach(dataset => {
+  chart.data.datasets.forEach(dataset => {
     dataset.data = [];
-     });
-  chart.update();
+  });
+  chart.render();
 }
+
 
 let { data } = trafficData.datasets[0];
 
@@ -124,6 +127,15 @@ hourly.addEventListener("click", () => {
  });
 
 
+var listItems = document.querySelectorAll(".traffic-nav li");
+console.log(listItems);
+for (let i = 0; i < listItems.length; i++) {
+    listItems[i].addEventListener("click", function (e) {
+    const current = document.querySelector(".active");
+        current.className = e.target.className.replace(" active", "");
+    this.className += " active";
+  });
+}
 
 //DAILY CHART
 

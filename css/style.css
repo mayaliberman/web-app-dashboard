@@ -635,12 +635,8 @@ canvas {
   font-weight: bold;
   color: #4d4d72;
 }
-.traffic-nav li:hover {
+.traffic-nav li:hover, .traffic-nav .active {
   background-color: #78cf82;
-  color: #fcfcfc;
-}
-.traffic-nav li:active {
-  background-color: #7679c1;
   color: #fcfcfc;
 }
 
