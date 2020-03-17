@@ -881,6 +881,11 @@ a {
   padding-right: 15px;
 }
 
+.message p {
+  color: red;
+  padding-left: 15px;
+}
+
 input,
 textarea,
 select {

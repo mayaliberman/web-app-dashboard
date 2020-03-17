@@ -53,7 +53,6 @@ let trafficData = {
   ]
 };
 
-
 let trafficOptions = {
   aspectRatio: 2.5,
   animation: {
@@ -80,13 +79,11 @@ let trafficChart = new Chart(trafficCanvas, {
 });
 
 function addData(chart, data) {
-   chart.data.datasets.forEach(dataset => {
+  chart.data.datasets.forEach(dataset => {
     dataset.data = data;
   });
   chart.update();
-  
 }
-
 
 function removeData(chart) {
   chart.data.datasets.forEach(dataset => {
@@ -95,44 +92,40 @@ function removeData(chart) {
   chart.render();
 }
 
-
 let { data } = trafficData.datasets[0];
 
-const trafficNav = document.querySelector('.traffic-nav');
+const trafficNav = document.querySelector(".traffic-nav");
 const hourly = document.querySelectorAll(".traffic-nav li")[0];
-const daily = document.querySelectorAll('.traffic-nav li')[1];
+const daily = document.querySelectorAll(".traffic-nav li")[1];
 const weekly = document.querySelectorAll(".traffic-nav li")[2];
 const monthly = document.querySelectorAll(".traffic-nav li")[3];
 
-
-
-monthly.addEventListener('click', () => {
+monthly.addEventListener("click", () => {
   removeData(trafficChart);
   addData(trafficChart, dataStatistic.monthly);
-  })
+});
 
-weekly.addEventListener('click', () => {
+weekly.addEventListener("click", () => {
   removeData(trafficChart);
   addData(trafficChart, dataStatistic.weekly);
- });
+});
 
 daily.addEventListener("click", () => {
   removeData(trafficChart);
   addData(trafficChart, dataStatistic.daily);
-  });
+});
 
 hourly.addEventListener("click", () => {
   removeData(trafficChart);
   addData(trafficChart, dataStatistic.hourly);
- });
-
+});
 
 var listItems = document.querySelectorAll(".traffic-nav li");
-console.log(listItems);
+
 for (let i = 0; i < listItems.length; i++) {
-    listItems[i].addEventListener("click", function (e) {
+  listItems[i].addEventListener("click", function(e) {
     const current = document.querySelector(".active");
-        current.className = e.target.className.replace(" active", "");
+    current.className = e.target.className.replace(" active", "");
     this.className += " active";
   });
 }
@@ -208,39 +201,61 @@ let mobileChart = new Chart(mobileCanvas, {
 //Messeging Section
 //******************** */
 
-const user = document.getElementById("userField");
-const message = document.getElementById("messageField");
 const send = document.getElementById("send");
-
 send.addEventListener("click", e => {
   e.preventDefault();
-  if (user.value === "" && message.value === "") {
-    alert("Please fill out user and message fields before sending");
-  } else if (user.value === "") {
-    alert("Plase fille out user field before sending");
-  } else if (message.value === "") {
-    alert("Please fill out message before sending");
-  } else {
-    alert(`Message successfully sned to ${user.value}`);
-  }
-  user.value = "";
-  message.value = "";
+  validateForm();
 });
+
+function validateForm() {
+  const messageAlert = document.querySelector(".message p");
+  const user = document.getElementById("userField");
+  const message = document.getElementById("messageField");
+  if (user.value.length < 1 && message.value.length < 1) {
+    messageAlert.textContent = `Please fill out user and message fields before sending`;
+    setTimeout(() => {
+      messageAlert.textContent = "";
+    }, 1500);
+  } else if (user.value.length < 1) {
+    messageAlert.textContent = "Plase fill out user field before sending";
+    setTimeout(() => {
+      messageAlert.textContent = "";
+    }, 1500);
+  } else if (message.value.length < 1) {
+    messageAlert.textContent = "Please fill out message before sending";
+    setTimeout(() => {
+       messageAlert.textContent = "";
+    }, 1500)
+  } else if (user.value.length > 1 && message.value.length > 1) {
+    messageAlert.style.color = "#7679c1";
+    messageAlert.textContent = `Message successfully sned to ${user.value}`;
+    setTimeout(() => {
+      messageAlert.textContent = "";
+      messageAlert.style.color = "red";
+      user.value = "";
+      message.value = "";
+    }, 2000);
+  }
+
+  if (user.value.length < 1 || message.value.length < 1) {
+    return false;
+  }
+}
 
 // GET USERS JSON
 
-window.addEventListener("load", async () => {
-  try {
-    const response = await fetch(`https://randomuser.me/api/?nat=gb&results=8`);
-    const responseJson = await response.json();
-    const profiles = getProfiles(responseJson);
-    generateMembers(profiles);
-    generateRecentMembers(profiles);
-  } catch (err) {
-    document.write("Something went wrong");
-    console.log(err);
-  }
-});
+// window.addEventListener("load", async () => {
+//   try {
+//     const response = await fetch(`https://randomuser.me/api/?nat=gb&results=8`);
+//     const responseJson = await response.json();
+//     const profiles = getProfiles(responseJson);
+//     generateMembers(profiles);
+//     generateRecentMembers(profiles);
+//   } catch (err) {
+//     document.write("Something went wrong");
+//     console.log(err);
+//   }
+// });
 
 const getProfiles = json => {
   const profileArr = [];
@@ -268,7 +283,7 @@ const getSingleProfile = profile => {
 const generateMembers = profiles => {
   const members = document.querySelector(".members");
   profiles.forEach((profile, index) => {
-        if (index < profiles.length / 2) {
+    if (index < profiles.length / 2) {
       const { first, last, email, thumbnail, date } = profile;
       const membersContainer = document.createElement("div");
       membersContainer.className += "members-container";
@@ -286,7 +301,7 @@ const generateMembers = profiles => {
 const generateRecentMembers = profiles => {
   const recent = document.querySelector(".recent-activity");
   const recentProfiles = profiles.slice(profiles.length / 2);
-    recentProfiles.forEach((profile) => {
+  recentProfiles.forEach(profile => {
     const { first, last, email, thumbnail } = profile;
     const membersContainer = document.createElement("div");
     membersContainer.className += "members-container";
@@ -297,9 +312,8 @@ const generateRecentMembers = profiles => {
                         <a href="#">${email}</a>
                     </div>
                     <p class="read-more">></p>`;
-
   });
-}
+};
 
 function formatDate(date) {
   const newDate = new Date(date);

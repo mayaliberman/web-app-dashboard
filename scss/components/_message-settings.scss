@@ -11,6 +11,11 @@
   padding-right: $padding-m;
 }
 
+.message p {
+  color: red;
+  padding-left: $padding-m;
+}
+
 input,
 textarea,
 select {
