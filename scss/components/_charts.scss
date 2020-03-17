@@ -9,6 +9,7 @@ canvas {
   @include flexy($justify: space-between, $wrap: nowrap);
   padding-left: $padding-m;
   padding-right: $padding-m;
+ 
 }
 
 .traffic-nav {

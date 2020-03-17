@@ -17,13 +17,15 @@ alertBanner.addEventListener("click", e => {
 //***************************** */
 //CHART WIDEGTS
 //****************************** */
-const dataStatistic = {
-  hourly: [750, 1250, 1000, 2000, 1500, 1750, 1250, 1850, 2250, 1500, 2500],
-  daily: [250, 180, 900, 1500, 1100, 600, 2500, 3200, 4100, 1200, 900],
-  weekly: [2500, 1000, 3000, 2600, 800, 400, 1000, 1500, 1000, 2000, 2000],
-  monthly: [500, 2200, 1300, 600, 2020, 900, 400, 800, 3000, 2600, 1400]
-};
+
 //TRAFFIC CHART
+
+const dataStatistic = [
+   [750, 1250, 1000, 2000, 1500, 1750, 1250, 1850, 2250, 1500, 2500],
+   [250, 180, 900, 1500, 1100, 600, 2500, 3200, 4100, 1200, 900],
+  [2500, 1000, 3000, 2600, 800, 400, 1000, 1500, 1000, 2000, 2000],
+   [500, 2200, 1300, 600, 2020, 900, 400, 800, 3000, 2600, 1400]
+];
 const trafficCanvas = document.getElementById("traffic-chart");
 
 let trafficData = {
@@ -42,7 +44,7 @@ let trafficData = {
   ],
   datasets: [
     {
-      data: dataStatistic.hourly,
+      data: dataStatistic[0],
       backgroundColor: "rgba(219,219,238, .7)",
       borderWidth: 2,
       lineTension: 0,
@@ -92,41 +94,16 @@ function removeData(chart) {
   chart.render();
 }
 
-let { data } = trafficData.datasets[0];
 
-const trafficNav = document.querySelector(".traffic-nav");
-const hourly = document.querySelectorAll(".traffic-nav li")[0];
-const daily = document.querySelectorAll(".traffic-nav li")[1];
-const weekly = document.querySelectorAll(".traffic-nav li")[2];
-const monthly = document.querySelectorAll(".traffic-nav li")[3];
-
-monthly.addEventListener("click", () => {
-  removeData(trafficChart);
-  addData(trafficChart, dataStatistic.monthly);
-});
-
-weekly.addEventListener("click", () => {
-  removeData(trafficChart);
-  addData(trafficChart, dataStatistic.weekly);
-});
-
-daily.addEventListener("click", () => {
-  removeData(trafficChart);
-  addData(trafficChart, dataStatistic.daily);
-});
-
-hourly.addEventListener("click", () => {
-  removeData(trafficChart);
-  addData(trafficChart, dataStatistic.hourly);
-});
-
-var listItems = document.querySelectorAll(".traffic-nav li");
+const listItems = document.querySelectorAll(".traffic-nav li");
 
 for (let i = 0; i < listItems.length; i++) {
   listItems[i].addEventListener("click", function(e) {
     const current = document.querySelector(".active");
     current.className = e.target.className.replace(" active", "");
     this.className += " active";
+    removeData(trafficChart);
+    addData(trafficChart, dataStatistic[i]);
   });
 }
 
@@ -215,26 +192,27 @@ function validateForm() {
     messageAlert.textContent = `Please fill out user and message fields before sending`;
     setTimeout(() => {
       messageAlert.textContent = "";
-    }, 1500);
+      messageAlert.style.display = 'block';
+    }, 2500);
   } else if (user.value.length < 1) {
     messageAlert.textContent = "Plase fill out user field before sending";
     setTimeout(() => {
       messageAlert.textContent = "";
-    }, 1500);
+    }, 2500);
   } else if (message.value.length < 1) {
     messageAlert.textContent = "Please fill out message before sending";
     setTimeout(() => {
        messageAlert.textContent = "";
-    }, 1500)
+    }, 2500)
   } else if (user.value.length > 1 && message.value.length > 1) {
     messageAlert.style.color = "#7679c1";
-    messageAlert.textContent = `Message successfully sned to ${user.value}`;
+    messageAlert.textContent = `Message successfully send to ${user.value}`;
     setTimeout(() => {
       messageAlert.textContent = "";
       messageAlert.style.color = "red";
       user.value = "";
       message.value = "";
-    }, 2000);
+    }, 3000);
   }
 
   if (user.value.length < 1 || message.value.length < 1) {
@@ -242,11 +220,17 @@ function validateForm() {
   }
 }
 
-// GET USERS JSON
 
+//****************************
+// Members Section
+//************************** */
+
+// GET USERS JSON
+// const apiAlternative = `https://fsjs-public-api-backup.herokuapp.com/api/`;
+// const api =` https://randomuser.me/api/?nat=gb&results=8`
 // window.addEventListener("load", async () => {
 //   try {
-//     const response = await fetch(`https://randomuser.me/api/?nat=gb&results=8`);
+//     const response = await fetch(apiAlternative);
 //     const responseJson = await response.json();
 //     const profiles = getProfiles(responseJson);
 //     generateMembers(profiles);
