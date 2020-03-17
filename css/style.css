@@ -350,6 +350,10 @@ template {
   font-family: "Roboto", sans-serif;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 h2 {
   font-size: 1.8rem;
 }
@@ -452,21 +456,21 @@ body {
 .account > .profile-image {
   border-radius: 50%;
   width: 25px;
-  padding: 10px;
   height: auto;
 }
 
 .bell-image {
+  transform-origin: 25% 50%;
   height: 30px;
   width: 30px;
   padding-right: 10px;
   margin-bottom: 10px;
   margin-top: 10px;
-  border-right: 1px solid #8d8c8c;
+  transition: all 0.3s ease-in-out;
 }
 
-.account svg {
-  transform: scale(0.6);
+.bell-image:hover {
+  transform: rotate(20deg);
 }
 
 .profile-name {
@@ -487,6 +491,7 @@ body {
 
   .account > .profile-image {
     width: 30px;
+    padding: 10px;
   }
 }
 @media (min-width: 1024px) {
@@ -514,10 +519,15 @@ body {
 
 .dashboard,
 .settings,
-.memebers,
+.members,
 .visits {
   width: 40px;
   padding: 15px;
+  transition: all 0.2s ease-in-out;
+}
+
+.dashboard:hover, .settings:hover, .members:hover, .visits:hover {
+  transform: scale(1.2);
 }
 
 @media (min-width: 768px) {
@@ -529,7 +539,7 @@ body {
 
   .dashboard,
 .settings,
-.memebers,
+.members,
 .visits {
     width: 40px;
   }
@@ -843,8 +853,6 @@ canvas {
   align-items: flex-start;
   align-content: flex-start;
   flex-wrap: wrap;
-  padding: 15px;
-  border-bottom: 1px solid #dbdbee;
 }
 
 .members-container:last-child {
@@ -883,14 +891,10 @@ a {
     padding-bottom: 15px;
   }
 
-  .members,
+  .members-container,
 .recent-activity {
     flex-basis: 49.9%;
     justify-content: space-between;
-  }
-
-  .members {
-    border-right: 1px solid #dbdbee;
   }
 }
 @media (min-width: 1024px) {
@@ -903,6 +907,10 @@ a {
     flex-wrap: wrap;
   }
 
+  .recent-activity {
+    border-left: 1px solid #dbdbee;
+  }
+
   .members-text {
     flex-basis: 40%;
   }
@@ -910,7 +918,8 @@ a {
 /* ============================================= */
 /*            Message & Settings                 */
 /* ============================================= */
-.message, .settings-container {
+.message,
+.settings-container {
   padding-bottom: 15px;
   box-sizing: border-box;
 }
@@ -924,8 +933,7 @@ a {
   color: red;
   padding-left: 15px;
   font-weight: bold;
-  padding-top: 0px;
-  padding-bottom: 0px;
+  height: 40px;
   margin-top: 0px;
   margin-bottom: 0px;
 }
@@ -942,7 +950,7 @@ select {
 }
 
 textarea {
-  height: 147px;
+  height: 110px;
 }
 
 .settings-container {

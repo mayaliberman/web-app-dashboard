@@ -1,21 +1,20 @@
-
 * {
-    font-family: 'Roboto', sans-serif;
-    
-   
+  font-family: "Roboto", sans-serif;
 }
 
+html {
+  scroll-behavior: smooth;
+}
 
 h2 {
-    font-size: 1.8rem;
+  font-size: 1.8rem;
 }
 h3 {
-    color: $side-nav-color;
-    font-size: 1.4rem;
-     text-transform: uppercase;
+  color: $side-nav-color;
+  font-size: 1.4rem;
+  text-transform: uppercase;
 }
 
 body {
-    color: $black;
+  color: $black;
 }
-

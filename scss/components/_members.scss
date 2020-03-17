@@ -9,8 +9,12 @@
 
 .members-container {
   @include flexy($justify: space-between, $align: flex-start);
-  padding: $padding-m;
-  border-bottom: 1px solid $search-color;
+  // padding: $padding-m;
+  // border-bottom: 1px solid $search-color;
+}
+
+.recent-activity {
+  // padding: $padding-m;
 }
 
 .members-container:last-child {
@@ -52,21 +56,26 @@ a {
     padding-bottom: $padding-m;
   }
 
-  .members,
+  .members-container,
   .recent-activity {
     flex-basis: 49.9%;
     justify-content: space-between;
   }
 
-  .members {
-    border-right: 1px solid $search-color;
-  }
+  
+
+  
 }
 
 @media (min-width: $media-l) {
   .users {
     @include flexy($align: flex-start, $justify: flex-start);
   }
+
+  .recent-activity {
+    border-left: 1px solid  $search-color;
+  }
+
 
   .members-text {
     flex-basis: 40%;

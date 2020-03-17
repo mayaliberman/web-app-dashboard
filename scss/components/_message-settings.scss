@@ -1,25 +1,24 @@
 /* ============================================= */
 /*            Message & Settings                 */
 /* ============================================= */
-.message, .settings-container{
-    padding-bottom: $padding-m;
-     box-sizing: border-box;
+.message,
+.settings-container {
+  padding-bottom: $padding-m;
+  box-sizing: border-box;
 }
-.message-header
- {
+.message-header {
   padding-left: $padding-m;
   padding-right: $padding-m;
 }
 
 .message p {
- color: red;
+  color: red;
   padding-left: $padding-m;
   font-weight: bold;
-padding-top: 0px;
-padding-bottom: 0px;
-margin-top: 0px;
-margin-bottom: 0px;
-  }
+   height: 40px;
+   margin-top: 0px;
+   margin-bottom: 0px;
+}
 
 input,
 textarea,
@@ -33,7 +32,7 @@ select {
 }
 
 textarea {
-  height: 147px;
+  height: 110px;
 }
 
 .settings-container {
@@ -75,7 +74,6 @@ textarea {
 .widget-container {
   padding-left: 15px;
   padding-right: 15px;
-  
 }
 
 @media (min-width: $media-m) {
@@ -84,18 +82,12 @@ textarea {
   }
 
   .settings-container {
-    
     width: 50%;
     padding-top: 0;
   }
 
-  
   .message {
     width: 50%;
     border-right: 1px solid $search-color;
-    
   }
-   
- 
-
 }

@@ -10,10 +10,15 @@
 
 .dashboard,
 .settings,
-.memebers,
+.members,
 .visits {
   width: 40px;
   padding: 15px;
+  transition: all .2s ease-in-out;
+}
+
+.dashboard:hover, .settings:hover, .members:hover, .visits:hover {
+  transform: scale(1.2);
 }
 
 @media (min-width: $media-m) {
@@ -25,7 +30,7 @@
 
   .dashboard,
   .settings,
-  .memebers,
+  .members,
   .visits {
     width: 40px;
   }
