@@ -6,47 +6,52 @@ canvas {
 }
 
 .traffic-header {
-  @include flexy($justify: space-between, $wrap: nowrap);
+  @include flexy($align: flex-start, $wrap: nowrap, $direction: column);
   padding-left: $padding-m;
   padding-right: $padding-m;
- 
 }
 
 .traffic-nav {
   padding-left: 0px;
+  padding-top: 0px;
+  padding-bottom: 0px;
+  margin-top: 0px;
+  width: 100%;
 
-  @include flexy($wrap: nowrap);
+  @include flexy($wrap: nowrap, $justify: space-between);
   & li {
     padding: $padding-s $padding-s;
     list-style: none;
     border-radius: 15px;
     margin-left: 3px;
-    font-size: $font-size-xs;
+    font-size: $font-size-s;
     font-weight: bold;
     color: $side-nav-color;
   }
 
-  & li:hover, .active {
+  & li:hover,
+  .active {
     background-color: $green-color;
     color: $white;
   }
-
-  
 }
-
-//  .active {
-//     background-color: $primary-color;
-//     color: $white;
-//   }
 
 .daily-header,
 .mobile-header {
   padding-left: $padding-m;
 }
 
-
-
 @media (min-width: $media-m) {
+  .traffic-header {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .traffic-nav {
+    margin-bottom: 0px;
+    justify-content: flex-end;
+  }
+
   .traffic {
     padding-bottom: $padding-xl;
   }
@@ -77,9 +82,14 @@ canvas {
   .traffic-header {
     padding-top: $padding-l;
     padding-bottom: $padding-l;
+    
   }
 
   .traffic-nav li {
     padding: $padding-s $padding-l;
+  }
+
+  .traffic-nav {
+    width: 35%;
   }
 }
