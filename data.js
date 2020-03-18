@@ -1,7 +1,7 @@
 // 20200318105556
 // https://fsjs-public-api-backup.herokuapp.com/api/
 
-  const results = {
+  export default  results = {
     results: [
       {
         name: {
@@ -316,6 +316,8 @@
         }
       }
     ]
-  };
+};
+  
+
 
 

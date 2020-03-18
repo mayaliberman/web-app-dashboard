@@ -1,5 +1,5 @@
-import { results } from "./data.js";
-console.log(results);
+// import { results } from "./data.js";
+// console.log(results);
 
 //Alert banner
 
