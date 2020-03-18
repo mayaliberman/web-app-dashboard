@@ -1,3 +1,6 @@
+import { results } from './data';
+
+
 //Alert banner
 
 const alertBanner = document.getElementById("alert");
