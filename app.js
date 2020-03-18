@@ -1,4 +1,4 @@
-import { results } from './data';
+import { results } from "./data.js";
 console.log(results);
 
 //Alert banner
