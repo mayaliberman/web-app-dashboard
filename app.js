@@ -1,5 +1,5 @@
 import { results } from './data';
-
+console.log(results);
 
 //Alert banner
 
@@ -307,3 +307,9 @@ function formatDate(date) {
   const newEvent = newDate.toLocaleDateString("en-US");
   return newEvent;
 }
+
+//****************************
+// Settings
+//************************** */
+
+localStorage.setItem('public-settings', 'checked')
