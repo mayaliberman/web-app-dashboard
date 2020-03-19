@@ -1,5 +1,4 @@
-// import { results } from "./data.js";
-// console.log(results);
+console.log(results);
 
 //Alert banner
 
@@ -24,10 +23,10 @@ alertBanner.addEventListener("click", e => {
 //TRAFFIC CHART
 
 const dataStatistic = [
-   [750, 1250, 1000, 2000, 1500, 1750, 1250, 1850, 2250, 1500, 2500],
-   [250, 180, 900, 1500, 1100, 600, 2500, 2100, 2400, 1200, 900],
+  [750, 1250, 1000, 2000, 1500, 1750, 1250, 1850, 2250, 1500, 2500],
+  [250, 180, 900, 1500, 1100, 600, 2500, 2100, 2400, 1200, 900],
   [2500, 1000, 2200, 2600, 800, 400, 1000, 1500, 1000, 2000, 2000],
-   [500, 2200, 1300, 600, 2020, 900, 400, 800, 2500, 2600, 1400]
+  [500, 2200, 1300, 600, 2020, 900, 400, 800, 2500, 2600, 1400]
 ];
 const trafficCanvas = document.getElementById("traffic-chart");
 
@@ -96,7 +95,6 @@ function removeData(chart) {
   });
   chart.render();
 }
-
 
 const listItems = document.querySelectorAll(".traffic-nav li");
 
@@ -195,7 +193,7 @@ function validateForm() {
     messageAlert.textContent = `Please fill out user and message fields before sending`;
     setTimeout(() => {
       messageAlert.textContent = "";
-      messageAlert.style.display = 'block';
+      messageAlert.style.display = "block";
     }, 2500);
   } else if (user.value.length < 1) {
     messageAlert.textContent = "Plase fill out user field before sending";
@@ -205,8 +203,8 @@ function validateForm() {
   } else if (message.value.length < 1) {
     messageAlert.textContent = "Please fill out message before sending";
     setTimeout(() => {
-       messageAlert.textContent = "";
-    }, 2500)
+      messageAlert.textContent = "";
+    }, 2500);
   } else if (user.value.length > 1 && message.value.length > 1) {
     messageAlert.style.color = "#7679c1";
     messageAlert.textContent = `Message successfully send to ${user.value}`;
@@ -223,26 +221,26 @@ function validateForm() {
   }
 }
 
-
 //****************************
 // Members Section
 //************************** */
 
 // GET USERS JSON
-// const apiAlternative = `https://fsjs-public-api-backup.herokuapp.com/api/`;
-// const api =` https://randomuser.me/api/?nat=gb&results=8`
-// window.addEventListener("load", async () => {
-//   try {
-//     const response = await fetch(apiAlternative);
-//     const responseJson = await response.json();
-//     const profiles = getProfiles(responseJson);
-//     generateMembers(profiles);
-//     generateRecentMembers(profiles);
-//   } catch (err) {
-//     document.write("Something went wrong");
-//     console.log(err);
-//   }
-// });
+
+const api = ` https://randomuser.me/api/?nat=gb&results=8`;
+window.addEventListener("load", async () => {
+  try {
+    //*****Since the api was shutdown, I created a temporary data.js file instead.*****
+    // const response = await fetch(api);
+    // const responseJson = await response.json();
+    const profiles = getProfiles(results);
+   generateMembers(profiles);
+    generateRecentMembers(profiles);
+  } catch (err) {
+    document.write("Something went wrong");
+    console.log(err);
+  }
+});
 
 const getProfiles = json => {
   const profileArr = [];
@@ -256,7 +254,7 @@ const getSingleProfile = profile => {
   const { first, last } = profile.name;
   const thumbnail = profile.picture.thumbnail;
   const email = profile.email;
-  const date = formatDate(profile.registered.date);
+  const date = formatDate(profile.dob.date);
 
   return {
     first,
@@ -268,7 +266,7 @@ const getSingleProfile = profile => {
 };
 
 const generateMembers = profiles => {
-  const members = document.querySelector(".members");
+  const members = document.querySelector(".members-section");
   profiles.forEach((profile, index) => {
     if (index < profiles.length / 2) {
       const { first, last, email, thumbnail, date } = profile;
@@ -288,6 +286,7 @@ const generateMembers = profiles => {
 const generateRecentMembers = profiles => {
   const recent = document.querySelector(".recent-activity");
   const recentProfiles = profiles.slice(profiles.length / 2);
+
   recentProfiles.forEach(profile => {
     const { first, last, email, thumbnail } = profile;
     const membersContainer = document.createElement("div");
@@ -312,4 +311,4 @@ function formatDate(date) {
 // Settings
 //************************** */
 
-localStorage.setItem('public-settings', 'checked')
+localStorage.setItem("public-settings", "checked");

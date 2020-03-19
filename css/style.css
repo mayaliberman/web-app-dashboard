@@ -848,11 +848,10 @@ canvas {
 
 .members-container {
   display: flex;
-  flex-direction: row;
   justify-content: space-between;
-  align-items: flex-start;
-  align-content: flex-start;
-  flex-wrap: wrap;
+  padding: 15px;
+  border-bottom: 1px solid #dbdbee;
+  font-size: 0.8rem;
 }
 
 .members-container:last-child {
@@ -864,11 +863,7 @@ canvas {
   width: 50px;
   padding-top: 10px;
   padding-bottom: 10px;
-}
-
-.members-text,
-.recent-text {
-  line-height: 0.8;
+  flex-basis: 1;
 }
 
 a {
@@ -878,9 +873,20 @@ a {
 }
 
 .read-more {
+  flex-basis: 50px;
   color: #7679c1;
   font-size: 1.2rem;
   font-weight: bold;
+  text-align: right;
+}
+
+.members-text,
+.recent-text {
+  flex-basis: 2;
+}
+
+.members-container > p {
+  flex-basis: 1;
 }
 
 @media (min-width: 768px) {
@@ -891,28 +897,23 @@ a {
     padding-bottom: 15px;
   }
 
-  .members-container,
-.recent-activity {
-    flex-basis: 49.9%;
-    justify-content: space-between;
+  .members-container {
+    font-size: 1rem;
   }
 }
 @media (min-width: 1024px) {
   .users {
     display: flex;
-    flex-direction: row;
-    justify-content: flex-start;
-    align-items: flex-start;
-    align-content: flex-start;
-    flex-wrap: wrap;
+    align-items: stretch;
+  }
+
+  .members-section,
+.recent-activity {
+    flex-basis: 50%;
   }
 
   .recent-activity {
     border-left: 1px solid #dbdbee;
-  }
-
-  .members-text {
-    flex-basis: 40%;
   }
 }
 /* ============================================= */
@@ -920,7 +921,6 @@ a {
 /* ============================================= */
 .message,
 .settings-container {
-  padding-bottom: 15px;
   box-sizing: border-box;
 }
 
@@ -950,11 +950,11 @@ select {
 }
 
 textarea {
-  height: 110px;
+  height: 138px;
 }
 
 .settings-container {
-  padding: 30px 15px;
+  padding: 15px 15px;
 }
 
 .settings-button {
@@ -1000,23 +1000,18 @@ textarea {
 }
 
 @media (min-width: 768px) {
+  .message {
+    border-right: 1px solid #dbdbee;
+  }
+}
+@media (min-width: 1024px) {
   .message-settings {
     display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    align-content: flex-start;
-    flex-wrap: wrap;
+    align-items: stretch;
   }
 
-  .settings-container {
-    width: 50%;
-    padding-top: 0;
-  }
-
-  .message {
-    width: 50%;
-    border-right: 1px solid #dbdbee;
+  .message, .settings-container {
+    flex-basis: 50%;
   }
 }
 /* ============================================= */

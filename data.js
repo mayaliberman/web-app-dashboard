@@ -1,7 +1,7 @@
 // 20200318105556
 // https://fsjs-public-api-backup.herokuapp.com/api/
 
-  export default  results = {
+  const  results = {
     results: [
       {
         name: {
@@ -210,111 +210,8 @@
           medium: "http://lorempixel.com/100/100",
           thumbnail: "http://lorempixel.com/100/100"
         }
-      },
-      {
-        name: {
-          first: "Judy",
-          last: "Lockmore"
-        },
-        email: "dredd1985@comcast.com",
-        cell: "(503) 555-1234",
-        phone: "(503) 555-4321",
-        location: {
-          street: {
-            number: "4185",
-            name: "39th Cir."
-          },
-          city: "Lewisville",
-          state: "FM",
-          postcode: "65432"
-        },
-        dob: {
-          date: "1977-11-07"
-        },
-        picture: {
-          large: "http://placeimg.com/100/100/arch",
-          medium: "http://placeimg.com/100/100/arch",
-          thumbnail: "http://placeimg.com/100/100/arch"
-        }
-      },
-      {
-        name: {
-          first: "Patti",
-          last: "Beckett"
-        },
-        email: "breadmaker1960@yahoo.net",
-        cell: "(503) 555-1234",
-        phone: "(503) 555-4321",
-        location: {
-          street: {
-            number: "2345",
-            name: "2nd Ln."
-          },
-          city: "McHenry",
-          state: "NY",
-          postcode: "76543"
-        },
-        dob: {
-          date: "1961-01-14"
-        },
-        picture: {
-          large: "http://placeimg.com/100/100/people/grayscale",
-          medium: "http://placeimg.com/100/100/people/grayscale",
-          thumbnail: "http://placeimg.com/100/100/people/grayscale"
-        }
-      },
-      {
-        name: {
-          first: "Sarah",
-          last: "Underhill"
-        },
-        email: "trinity11@yahoo.network",
-        cell: "(503) 555-1234",
-        phone: "(503) 555-4321",
-        location: {
-          street: {
-            number: "369",
-            name: "39th Ct."
-          },
-          city: "Hampton",
-          state: "TX",
-          postcode: "91234"
-        },
-        dob: {
-          date: "1967-04-08"
-        },
-        picture: {
-          large: "http://placeimg.com/100/100/tech",
-          medium: "http://placeimg.com/100/100/tech",
-          thumbnail: "http://placeimg.com/100/100/tech"
-        }
-      },
-      {
-        name: {
-          first: "Megan",
-          last: "Goodwater"
-        },
-        email: "jester11@yahoo.ltd",
-        cell: "(503) 555-1234",
-        phone: "(503) 555-4321",
-        location: {
-          street: {
-            number: "258",
-            name: "Powell Ave."
-          },
-          city: "Portsmouth",
-          state: "NJ",
-          postcode: "72583"
-        },
-        dob: {
-          date: "1988-05-30"
-        },
-        picture: {
-          large: "http://placegoat.com/100",
-          medium: "http://placegoat.com/100",
-          thumbnail: "http://placegoat.com/100"
-        }
       }
+     
     ]
 };
   

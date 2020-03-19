@@ -129,7 +129,7 @@
             </div>
         </div>
         <div class="users" id="members">
-            <section class="members-container">
+            <section class="members-section">
                 <div class="members-header">
                     <h3 class="title-h3">New Members</h3>
                 </div>
@@ -161,43 +161,46 @@
                 <div class="settings-header">
                     <h3 class="title-h3">Settings</h3>
                 </div>
-                <div class="switches-section">
-                    <div class="switch-container">
-                        <p>Send Email Notification</p>
-                        <label class="switch">
-                            <input class="email-settings" type="checkbox">
-                            <span class="slider round"></span>
-                        </label>
+                <div class="settings-div">
+                    <div class="switches-section">
+                        <div class="switch-container">
+                            <p>Send Email Notification</p>
+                            <label class="switch">
+                                <input class="email-settings" type="checkbox">
+                                <span class="slider round"></span>
+                            </label>
+                        </div>
+                        <div class="switch-container">
+                            <p>Set Profile to Public</p>
+                            <label class="switch">
+                                <input class="public-settings" type="checkbox" checked>
+                                <span class="slider round"></span>
+                            </label>
+                        </div>
                     </div>
-                    <div class="switch-container">
-                        <p>Set Profile to Public</p>
-                        <label class="switch">
-                            <input class="public-settings" type="checkbox" checked>
-                            <span class="slider round"></span>
-                        </label>
-                    </div>
-                </div>
-                <!-- custom css toggle code -->
-                <!-- custom css toggle code -->
-                <div class="settings-form">
-                    <select class="form-field" id="timezone"> -->
-                        <option disabled selected>Select a Timezone</option>
-                        <option>Eastern</option>
-                        <option>Western</option>
-                        <option>Middle East</option>
-                    </select>
-                    <div class="settings-button">
-                        <button class="button-primary" id="save">Save</button>
-                        <button class="button-disabled" id="cancel">Cancel</button>
+                    <!-- custom css toggle code -->
+                    <!-- custom css toggle code -->
+                    <div class="settings-form">
+                        <select class="form-field" id="timezone"> -->
+                            <option disabled selected>Select a Timezone</option>
+                            <option>Eastern</option>
+                            <option>Western</option>
+                            <option>Middle East</option>
+                        </select>
+                        <div class="settings-button">
+                            <button class="button-primary" id="save">Save</button>
+                            <button class="button-disabled" id="cancel">Cancel</button>
 
+                        </div>
                     </div>
                 </div>
             </section>
         </div>
     </main>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js"></script>
+    <script src="data.js"></script>
     <script src="app.js"></script>
-    
+
 </body>
 
 </html>
