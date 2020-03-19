@@ -273,12 +273,15 @@ const generateMembers = profiles => {
       const membersContainer = document.createElement("div");
       membersContainer.className += "members-container";
       members.appendChild(membersContainer);
-      membersContainer.innerHTML = `<img src=${thumbnail} alt="" class="profile-image">
+      membersContainer.innerHTML = `
+      <img src=${thumbnail} alt="" class="profile-image">
+      <div class="member-info">
                     <div class="members-text">
                         <p>${first} ${last}</p>
                         <a href="#">${email}</a>
                     </div>
-                    <p>${date}</p>`;
+                    </div>
+                    <p class="date">${date}</p>`;
     }
   });
 };
@@ -299,9 +302,11 @@ const generateRecentMembers = profiles => {
     membersContainer.className += "members-container";
     recent.appendChild(membersContainer);
     membersContainer.innerHTML = `<img src="${thumbnail}" alt="" class="profile-image">
+                  <div class="member-info">
                     <div class="recent-text">
                         <p>${first} ${last} ${status[i]}</p>
                         <p>${time[i]} hour ago</p>
+                    </div>
                     </div>
                     <p class="read-more">></p>`;
   });
@@ -316,5 +321,26 @@ function formatDate(date) {
 //****************************
 // Settings
 //************************** */
+const checkbox = document.querySelector(" input[class=email-settings]");
 
-localStorage.setItem("public-settings", "checked");
+checkbox.addEventListener("change", function() {
+  console.log(checkbox.innerHTML);
+  // if (this.checked) {
+  //   localStorage.setItem('email', 'checked');
+  //   console.log(localStorage.getItem('email'));
+  // } else {
+  //   localStorage.email = '';
+  //   console.log(localStorage.getItem("email"));
+  // }
+});
+
+const buttonDisabled = document.querySelector(".button-disabled");
+buttonDisabled.addEventListener("click", () => {
+  localStorage.clear();
+});
+
+const buttonSave = document.querySelector("#save");
+buttonSave.addEventListener("click", () => {
+  const checkbox = document.querySelector(" input[class=email-settings]");
+  localStorage.setItem("email", checkbox.innerHtml);
+});
