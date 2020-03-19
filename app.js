@@ -234,7 +234,7 @@ window.addEventListener("load", async () => {
     // const response = await fetch(api);
     // const responseJson = await response.json();
     const profiles = getProfiles(results);
-   generateMembers(profiles);
+    generateMembers(profiles);
     generateRecentMembers(profiles);
   } catch (err) {
     document.write("Something went wrong");
@@ -286,16 +286,22 @@ const generateMembers = profiles => {
 const generateRecentMembers = profiles => {
   const recent = document.querySelector(".recent-activity");
   const recentProfiles = profiles.slice(profiles.length / 2);
-
-  recentProfiles.forEach(profile => {
-    const { first, last, email, thumbnail } = profile;
+  const time = [2, 4, 6, 1];
+  const status = [
+    "updated  profile image",
+    "liked the post about Madonna",
+    "commented facebook changes for 2019",
+    "posted youre' best TIPS for SEO"
+  ];
+  recentProfiles.forEach((profile, i) => {
+    const { first, last, thumbnail } = profile;
     const membersContainer = document.createElement("div");
     membersContainer.className += "members-container";
     recent.appendChild(membersContainer);
     membersContainer.innerHTML = `<img src="${thumbnail}" alt="" class="profile-image">
                     <div class="recent-text">
-                        <p>${first} ${last}</p>
-                        <a href="#">${email}</a>
+                        <p>${first} ${last} ${status[i]}</p>
+                        <p>${time[i]} hour ago</p>
                     </div>
                     <p class="read-more">></p>`;
   });

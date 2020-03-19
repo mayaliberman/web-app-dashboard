@@ -863,7 +863,6 @@ canvas {
   width: 50px;
   padding-top: 10px;
   padding-bottom: 10px;
-  flex-basis: 1;
 }
 
 a {
@@ -878,15 +877,6 @@ a {
   font-size: 1.2rem;
   font-weight: bold;
   text-align: right;
-}
-
-.members-text,
-.recent-text {
-  flex-basis: 2;
-}
-
-.members-container > p {
-  flex-basis: 1;
 }
 
 @media (min-width: 768px) {

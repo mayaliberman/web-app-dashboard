@@ -24,7 +24,7 @@
   width: 50px;
   padding-top: $padding-s;
   padding-bottom: $padding-s;
-  flex-basis: 1;
+  // flex-basis: 1;
 }
 
 a {
@@ -43,11 +43,11 @@ a {
 
 .members-text,
 .recent-text {
-  flex-basis: 2;
+  // flex-basis: 2;
 }
 
 .members-container > p {
-  flex-basis: 1;
+  // flex-basis: 1;
 }
 
 @media (min-width: $media-m) {
