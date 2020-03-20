@@ -34,6 +34,14 @@
   flex-basis: 70%;
 }
 
+.members-text a {
+  color: $primary-color;
+}
+
+.members-text a:visited {
+  color: $side-nav-color;
+}
+
 .members-header,
 .recent-header {
   padding-left: $padding-m;

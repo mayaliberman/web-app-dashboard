@@ -873,6 +873,14 @@ canvas {
   flex-basis: 70%;
 }
 
+.members-text a {
+  color: #7679c1;
+}
+
+.members-text a:visited {
+  color: #4d4d72;
+}
+
 .members-header,
 .recent-header {
   padding-left: 15px;
