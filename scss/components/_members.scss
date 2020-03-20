@@ -13,6 +13,7 @@
   padding: $padding-m;
   border-bottom: 1px solid $search-color;
   font-size: $font-size-s;
+  height: 70px;
 }
 
 .member-info {
@@ -32,9 +33,11 @@
   border-bottom: 0px solid transparent;
 }
 
-.members-container > .profile-image {
+// .members-container > 
+
+.profile-image {
   border-radius: 50%;
-  width: 50px;
+  width: 25px;
   padding-top: $padding-s;
   padding-bottom: $padding-s;
   flex-grow: 1;
