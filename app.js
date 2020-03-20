@@ -269,19 +269,20 @@ const generateMembers = profiles => {
   const members = document.querySelector(".members-section");
   profiles.forEach((profile, index) => {
     if (index < profiles.length / 2) {
-      const { first, last, email, thumbnail, date } = profile;
+      const { first, last, email, date } = profile;
       const membersContainer = document.createElement("div");
       membersContainer.className += "members-container";
       members.appendChild(membersContainer);
       membersContainer.innerHTML = `
-      <img src=${thumbnail} alt="" class="profile-image">
-      <div class="member-info">
-                    <div class="members-text">
-                        <p>${first} ${last}</p>
-                        <a href="#">${email}</a>
-                    </div>
-                    </div>
-                    <p class="date">${date}</p>`;
+                              <img src="./images/member-${index+1}.jpg" alt="" class="profile-image">
+                              <div class="member-info">
+                                <div class="members-text">
+                                  <p>${first} ${last}</p>
+                                  <p>
+                                  <a href="#">${email}</a></p>
+                                </div>
+                              </div>
+                              <p class="date">${date}</p>`;
     }
   });
 };
@@ -297,18 +298,19 @@ const generateRecentMembers = profiles => {
     "posted youre' best TIPS for SEO"
   ];
   recentProfiles.forEach((profile, i) => {
-    const { first, last, thumbnail } = profile;
+    const { first, last } = profile;
     const membersContainer = document.createElement("div");
     membersContainer.className += "members-container";
     recent.appendChild(membersContainer);
-    membersContainer.innerHTML = `<img src="${thumbnail}" alt="" class="profile-image">
-                  <div class="member-info">
-                    <div class="recent-text">
-                        <p>${first} ${last} ${status[i]}</p>
-                        <p>${time[i]} hour ago</p>
-                    </div>
-                    </div>
-                    <p class="read-more">></p>`;
+    membersContainer.innerHTML = `
+                                <img src="./images/member-${i +1}.jpg" alt="" class="profile-image">
+                                <div class="member-info">
+                                  <div class="recent-text">
+                                    <p>${first} ${last} ${status[i]}</p>
+                                    <p>${time[i]} hour ago</p>
+                                  </div>
+                                </div>
+                                <p class="read-more">></p>`;
   });
 };
 

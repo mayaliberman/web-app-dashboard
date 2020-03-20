@@ -841,92 +841,98 @@ canvas {
 /* ============================================= */
 /*             Members                           */
 /* ============================================= */
+.members-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 70px;
+  font-size: 0.8rem;
+  border-bottom: 1px solid #dbdbee;
+}
+
+.members-container:last-child {
+  border-bottom: 1px solid transparent;
+}
+
+.profile-image {
+  border-radius: 50%;
+  width: 50px;
+  padding: 10px 15px;
+  flex-basis: auto;
+}
+
+.members-section,
+.recent-activity {
+  box-sizing: border-box;
+  flex-basis: 50%;
+}
+
+.member-info {
+  display: flex;
+  justify-content: flex-start;
+  flex-basis: 70%;
+}
+
 .members-header,
 .recent-header {
   padding-left: 15px;
 }
 
-.members-container {
-  display: flex;
-  padding: 15px;
-  border-bottom: 1px solid #dbdbee;
-  font-size: 0.8rem;
-  height: 70px;
-}
-
-.member-info {
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  flex-grow: 9;
-  padding-left: 40px;
-}
-
-.member-info a {
-  margin-top: 0px;
-}
-
-.members-container:last-child {
-  border-bottom: 0px solid transparent;
-}
-
-.profile-image {
-  border-radius: 50%;
-  width: 25px;
-  padding-top: 10px;
-  padding-bottom: 10px;
-  flex-grow: 1;
-}
-
-.date {
-  flex-grow: 1;
+.date,
+.read-more {
+  padding-right: 15px;
+  flex-basis: 15%;
   text-align: right;
-}
-
-a {
-  color: #7679c1;
-  font-weight: bold;
-  text-decoration: none;
 }
 
 .read-more {
-  flex-basis: 50px;
   color: #7679c1;
-  font-size: 1.2rem;
   font-weight: bold;
-  text-align: right;
-  flex-grow: 1;
-}
-
-.recent-text {
-  flex-grow: 9;
+  padding-left: 10px;
+  font-size: 1rem;
 }
 
 @media (min-width: 768px) {
   .users {
-    border-bottom: 1px solid #dbdbee;
+    display: flex;
     border-top: 1px solid #dbdbee;
-    padding-top: 15px;
-    padding-bottom: 15px;
+    border-bottom: 1px solid #dbdbee;
+  }
+
+  .members-section {
+    border-right: 1px solid #dbdbee;
   }
 
   .members-container {
-    font-size: 1rem;
+    padding: 20px 0;
+    margin-right: 15px;
+    margin-left: 15px;
+  }
+
+  .profile-image {
+    padding-right: 0px;
+    padding-left: 0px;
+  }
+
+  .member-info {
+    padding-left: 30px;
+    padding-right: 15px;
+    flex-basis: 80%;
+  }
+
+  .date,
+.read-more {
+    flex-basis: 12%;
+    padding-right: 0px;
+  }
+
+  .profile-image {
+    flex-basis: 8%;
   }
 }
 @media (min-width: 1024px) {
-  .users {
-    display: flex;
-    align-items: stretch;
-  }
-
-  .members-section,
-.recent-activity {
-    flex-basis: 50%;
-  }
-
-  .recent-activity {
-    border-left: 1px solid #dbdbee;
+  .members-container {
+    font-size: 1rem;
   }
 }
 /* ============================================= */
@@ -1023,7 +1029,8 @@ textarea {
     align-items: stretch;
   }
 
-  .message, .settings-container {
+  .message,
+.settings-container {
     flex-basis: 50%;
   }
 }

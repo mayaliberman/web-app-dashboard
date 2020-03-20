@@ -15,9 +15,9 @@
   color: red;
   padding-left: $padding-m;
   font-weight: bold;
-   height: 40px;
-   margin-top: 0px;
-   margin-bottom: 0px;
+  height: 40px;
+  margin-top: 0px;
+  margin-bottom: 0px;
 }
 
 input,
@@ -77,34 +77,20 @@ textarea {
 }
 
 @media (min-width: $media-m) {
-  .message-settings {
-    // @include flexy($justify: space-between);
-    // display: flex;
-  }
-
-    .message {
-    // flex-basis: 1;
+  .message {
     border-right: 1px solid $search-color;
   }
 }
 
-@media(min-width: $media-l) {
-
+@media (min-width: $media-l) {
   .message-settings {
     display: flex;
     align-items: stretch;
   }
 
-  .message, .settings-container {
+  .message,
+  .settings-container {
     flex-basis: 50%;
   }
-  .settings-div {
-    // display: flex;
-    // justify-content: space-between;
-    // justify-content: space-between;
-  }
-
-  .switches-section, .settings-form {
-    // flex-grow: 1;
-  }
+  
 }
