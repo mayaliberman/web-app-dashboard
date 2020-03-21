@@ -23,7 +23,6 @@ window.addEventListener("load", async () => {
   }
 });
 
-
 //***************************** */
 //ALERT BANNER
 //****************************** */
@@ -419,50 +418,30 @@ function autocomplete(inp, arr) {
 
 const emailSwitch = document.querySelector(".email-settings");
 const publicSwitch = document.querySelector(".public-settings");
+const timeZones = document.getElementById("timezone");
 document.getElementById("save").addEventListener("click", () => {
   localStorage.setItem("emailSettings", emailSwitch.checked);
   localStorage.setItem("publicSettings", publicSwitch.checked);
- findSelectedOption();
+  localStorage.setItem('timeSettings', timeZones.value);
   alert("Settings successfully saved!");
 });
-
 
 const loadSettings = function() {
   if (localStorage.emailSettings !== null) {
     emailSwitch.checked = localStorage.emailSettings === "true";
   }
   if (localStorage.publicSettings !== null) {
-    publicSwitch.checked = localStorage.publicSettings === 'true';
+    publicSwitch.checked = localStorage.publicSettings === "true";
   }
-   if (localStorage.timeSettings !== null) {
-     timeZones.selected = localStorage.publicSettings === "true";
-   }
+  if (localStorage.timeSettings !== null) {
+    timeZones.value = localStorage.getItem('timeSettings');
+  }
 };
 
-const cancel = document.querySelector('#cancel');
-cancel.addEventListener('click', () => {
-  localStorage.removeItem('emailSettings');
+const cancel = document.querySelector("#cancel");
+cancel.addEventListener("click", () => {
+  localStorage.removeItem("emailSettings");
   localStorage.removeItem("publicSettings");
   localStorage.removeItem("timeSettings");
 });
-
-
-const timeZones = document.getElementById("timezone");
- 
-timeZones.addEventListener('change', (e) => {
-  console.log(e.currentTarget);
-});
-  
-
-  function findSelectedOption() {
-    for (let i = 1; i < timeZones.children.length; i++) {
-      if (timeZones.children[i].selected === true) {
-        localStorage.setItem(
-          "timeSettings",
-          timeZones.children[i].selected = true
-        );
-        console.log(timeZones.children[i]);
-      }
-    }
-  }
 
