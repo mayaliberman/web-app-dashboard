@@ -715,6 +715,7 @@ canvas {
   .traffic-nav li {
     padding: 10px 15px;
     font-size: 0.8rem;
+    cursor: default;
   }
 
   .daily-header,

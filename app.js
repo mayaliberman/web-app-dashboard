@@ -15,6 +15,8 @@ window.addEventListener("load", async () => {
     //This autocomplete will generate on the message section
     const userNames = profiles.map(user => `${user.first} ${user.last}`);
     autocomplete(document.getElementById("userField"), userNames);
+
+    loadSettings();
   } catch (err) {
     document.write("Something went wrong");
     console.log(err);
@@ -414,26 +416,53 @@ function autocomplete(inp, arr) {
 //****************************
 // Settings
 //************************** */
-const checkbox = document.querySelector(" input[class=email-settings]");
 
-checkbox.addEventListener("change", function() {
-  console.log(checkbox.innerHTML);
-  // if (this.checked) {
-  //   localStorage.setItem('email', 'checked');
-  //   console.log(localStorage.getItem('email'));
-  // } else {
-  //   localStorage.email = '';
-  //   console.log(localStorage.getItem("email"));
-  // }
+const emailSwitch = document.querySelector(".email-settings");
+const publicSwitch = document.querySelector(".public-settings");
+document.getElementById("save").addEventListener("click", () => {
+  localStorage.setItem("emailSettings", emailSwitch.checked);
+  localStorage.setItem("publicSettings", publicSwitch.checked);
+ findSelectedOption();
+  alert("Settings successfully saved!");
 });
 
-const buttonDisabled = document.querySelector(".button-disabled");
-buttonDisabled.addEventListener("click", () => {
-  localStorage.clear();
+
+const loadSettings = function() {
+  if (localStorage.emailSettings !== null) {
+    emailSwitch.checked = localStorage.emailSettings === "true";
+  }
+  if (localStorage.publicSettings !== null) {
+    publicSwitch.checked = localStorage.publicSettings === 'true';
+  }
+   if (localStorage.timeSettings !== null) {
+     timeZones.selected = localStorage.publicSettings === "true";
+   }
+};
+
+const cancel = document.querySelector('#cancel');
+cancel.addEventListener('click', () => {
+  localStorage.removeItem('emailSettings');
+  localStorage.removeItem("publicSettings");
+  localStorage.removeItem("timeSettings");
 });
 
-const buttonSave = document.querySelector("#save");
-buttonSave.addEventListener("click", () => {
-  const checkbox = document.querySelector(" input[class=email-settings]");
-  localStorage.setItem("email", checkbox.innerHtml);
+
+const timeZones = document.getElementById("timezone");
+ 
+timeZones.addEventListener('change', (e) => {
+  console.log(e.currentTarget);
 });
+  
+
+  function findSelectedOption() {
+    for (let i = 1; i < timeZones.children.length; i++) {
+      if (timeZones.children[i].selected === true) {
+        localStorage.setItem(
+          "timeSettings",
+          timeZones.children[i].selected = true
+        );
+        console.log(timeZones.children[i]);
+      }
+    }
+  }
+

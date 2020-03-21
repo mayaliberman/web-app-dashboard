@@ -70,6 +70,7 @@ canvas {
   .traffic-nav li {
     padding: $padding-s $padding-m;
     font-size: $font-size-s;
+    cursor: default;
   }
 
   .daily-header,
