@@ -419,14 +419,20 @@ function autocomplete(inp, arr) {
 const emailSwitch = document.querySelector(".email-settings");
 const publicSwitch = document.querySelector(".public-settings");
 const timeZones = document.getElementById("timezone");
+const settingsAlert = document.querySelector(".setting-alert");
 document.getElementById("save").addEventListener("click", () => {
   localStorage.setItem("emailSettings", emailSwitch.checked);
   localStorage.setItem("publicSettings", publicSwitch.checked);
   localStorage.setItem('timeSettings', timeZones.value);
-  alert("Settings successfully saved!");
+  settingsAlert.textContent = 'Your Settings are Saved!'
+  setTimeout(() => {
+    settingsAlert.textContent = '';
+  }, 3000)
+  
 });
 
-const loadSettings = function() {
+const loadSettings = function () {
+  console.log(timeZones.value, 'timezone value')
   if (localStorage.emailSettings !== null) {
     emailSwitch.checked = localStorage.emailSettings === "true";
   }

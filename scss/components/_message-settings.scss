@@ -107,6 +107,11 @@ textarea {
   }
 }
 
+.setting-alert {
+  height: 16px;
+  color: $green-color;
+  font-weight: bold;
+}
 
 @media (min-width: $media-m) {
   .message {

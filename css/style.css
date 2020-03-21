@@ -1055,6 +1055,12 @@ textarea {
   color: #ffffff;
 }
 
+.setting-alert {
+  height: 16px;
+  color: #78cf82;
+  font-weight: bold;
+}
+
 @media (min-width: 768px) {
   .message {
     border-right: 1px solid #dbdbee;
