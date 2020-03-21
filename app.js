@@ -427,7 +427,7 @@ document.getElementById("save").addEventListener("click", () => {
   settingsAlert.textContent = 'Your Settings are Saved!'
   setTimeout(() => {
     settingsAlert.textContent = '';
-  }, 3000)
+  }, 2500);
   
 });
 
@@ -449,5 +449,10 @@ cancel.addEventListener("click", () => {
   localStorage.removeItem("emailSettings");
   localStorage.removeItem("publicSettings");
   localStorage.setItem("timeSettings", "Select a Timezone");
+  settingsAlert.style.color = "#7679c1";
+  settingsAlert.textContent = "Your Settings are Deleted!";
+  setTimeout(() => {
+    settingsAlert.textContent = "";
+  }, 2500);
 });
 
