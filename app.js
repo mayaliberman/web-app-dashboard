@@ -442,6 +442,6 @@ const cancel = document.querySelector("#cancel");
 cancel.addEventListener("click", () => {
   localStorage.removeItem("emailSettings");
   localStorage.removeItem("publicSettings");
-  localStorage.removeItem("timeSettings");
+  localStorage.setItem("timeSettings", "Select a Timezone");
 });
 
