@@ -1,6 +1,30 @@
-console.log(results);
+//***************************** */
+//On Page Load Events
+//****************************** */
+const api = ` https://randomuser.me/api/?nat=gb&results=8`;
+window.addEventListener("load", async () => {
+  try {
+    //*****Since the api was shutdown, I created a temporary data.js file instead.*****
+    // const response = await fetch(api);
+    // const responseJson = await response.json();
 
-//Alert banner
+    //Generating users on the members and recent members sections
+    const profiles = getProfiles(results);
+    generateMembers(profiles);
+    generateRecentMembers(profiles);
+    //This autocomplete will generate on the message section
+    const userNames = profiles.map(user => `${user.first} ${user.last}`);
+    autocomplete(document.getElementById("userField"), userNames);
+  } catch (err) {
+    document.write("Something went wrong");
+    console.log(err);
+  }
+});
+
+
+//***************************** */
+//ALERT BANNER
+//****************************** */
 
 const alertBanner = document.getElementById("alert");
 
@@ -176,8 +200,92 @@ let mobileChart = new Chart(mobileCanvas, {
 });
 
 //****************************
-//Messeging Section
-//******************** */
+// Members Section
+//************************** */
+
+const getProfiles = json => {
+  const profileArr = [];
+  json.results.forEach(person => {
+    profileArr.push(getSingleProfile(person));
+  });
+  return profileArr;
+};
+
+const getSingleProfile = profile => {
+  const { first, last } = profile.name;
+  const thumbnail = profile.picture.thumbnail;
+  const email = profile.email;
+  const date = formatDate(profile.dob.date);
+
+  return {
+    first,
+    last,
+    email,
+    thumbnail,
+    date
+  };
+};
+
+const generateMembers = profiles => {
+  const members = document.querySelector(".members-section");
+  profiles.forEach((profile, index) => {
+    if (index < profiles.length / 2) {
+      const { first, last, email, date } = profile;
+      const membersContainer = document.createElement("div");
+      membersContainer.className += "members-container";
+      members.appendChild(membersContainer);
+      membersContainer.innerHTML = `
+                              <img src="./images/member-${index +
+                                1}.jpg" alt="" class="profile-image">
+                              <div class="member-info">
+                                <div class="members-text">
+                                  <p>${first} ${last}</p>
+                                  <p>
+                                  <a href="#">${email}</a></p>
+                                </div>
+                              </div>
+                              <p class="date">${date}</p>`;
+    }
+  });
+};
+
+const generateRecentMembers = profiles => {
+  const recent = document.querySelector(".recent-activity");
+  const recentProfiles = profiles.slice(profiles.length / 2);
+  const time = [2, 4, 6, 1];
+  const status = [
+    "updated  profile image",
+    "liked the post about Madonna",
+    "commented facebook changes for 2019",
+    "posted youre' best TIPS for SEO"
+  ];
+  recentProfiles.forEach((profile, i) => {
+    const { first, last } = profile;
+    const membersContainer = document.createElement("div");
+    membersContainer.className += "members-container";
+    recent.appendChild(membersContainer);
+    membersContainer.innerHTML = `
+                                <img src="./images/member-${i +
+                                  1}.jpg" alt="" class="profile-image">
+                                <div class="member-info">
+                                  <div class="recent-text">
+                                    <p>${first} ${last} ${status[i]}</p>
+                                    <p>${time[i]} hour ago</p>
+                                  </div>
+                                </div>
+                                <p class="read-more">></p>`;
+  });
+};
+
+function formatDate(date) {
+  const newDate = new Date(date);
+  const newEvent = newDate.toLocaleDateString("en-US");
+  return newEvent;
+}
+
+//****************************
+//MESSAGE SECTION
+//************************** */
 
 const send = document.getElementById("send");
 send.addEventListener("click", e => {
@@ -222,102 +330,85 @@ function validateForm() {
 }
 
 //****************************
-// Members Section
+// Autocomplete
 //************************** */
 
-// GET USERS JSON
+//These autocomplete functions was taken from: https://www.w3schools.com/howto/howto_js_autocomplete.asp
+function autocomplete(inp, arr) {
+  let currentFocus;
+  inp.addEventListener("input", function() {
+    let a,
+      b,
+      val = this.value;
+    closeAllLists();
+    if (!val) {
+      return false;
+    }
+    currentFocus = -1;
+    a = document.createElement("DIV");
+    a.setAttribute("id", this.id + "autocomplete-list");
+    a.setAttribute("class", "autocomplete-items");
+    this.parentNode.appendChild(a);
+    for (let i = 0; i < arr.length; i++) {
+      if (arr[i].substr(0, val.length).toUpperCase() == val.toUpperCase()) {
+        b = document.createElement("DIV");
+        b.innerHTML = "<strong>" + arr[i].substr(0, val.length) + "</strong>";
+        b.innerHTML += arr[i].substr(val.length);
+        b.innerHTML += "<input type='hidden' value='" + arr[i] + "'>";
 
-const api = ` https://randomuser.me/api/?nat=gb&results=8`;
-window.addEventListener("load", async () => {
-  try {
-    //*****Since the api was shutdown, I created a temporary data.js file instead.*****
-    // const response = await fetch(api);
-    // const responseJson = await response.json();
-    const profiles = getProfiles(results);
-    generateMembers(profiles);
-    generateRecentMembers(profiles);
-  } catch (err) {
-    document.write("Something went wrong");
-    console.log(err);
-  }
-});
-
-const getProfiles = json => {
-  const profileArr = [];
-  json.results.forEach(person => {
-    profileArr.push(getSingleProfile(person));
-  });
-  return profileArr;
-};
-
-const getSingleProfile = profile => {
-  const { first, last } = profile.name;
-  const thumbnail = profile.picture.thumbnail;
-  const email = profile.email;
-  const date = formatDate(profile.dob.date);
-
-  return {
-    first,
-    last,
-    email,
-    thumbnail,
-    date
-  };
-};
-
-const generateMembers = profiles => {
-  const members = document.querySelector(".members-section");
-  profiles.forEach((profile, index) => {
-    if (index < profiles.length / 2) {
-      const { first, last, email, date } = profile;
-      const membersContainer = document.createElement("div");
-      membersContainer.className += "members-container";
-      members.appendChild(membersContainer);
-      membersContainer.innerHTML = `
-                              <img src="./images/member-${index+1}.jpg" alt="" class="profile-image">
-                              <div class="member-info">
-                                <div class="members-text">
-                                  <p>${first} ${last}</p>
-                                  <p>
-                                  <a href="#">${email}</a></p>
-                                </div>
-                              </div>
-                              <p class="date">${date}</p>`;
+        b.addEventListener("click", function(e) {
+          inp.value = this.getElementsByTagName("input")[0].value;
+          closeAllLists();
+        });
+        a.appendChild(b);
+      }
     }
   });
-};
 
-const generateRecentMembers = profiles => {
-  const recent = document.querySelector(".recent-activity");
-  const recentProfiles = profiles.slice(profiles.length / 2);
-  const time = [2, 4, 6, 1];
-  const status = [
-    "updated  profile image",
-    "liked the post about Madonna",
-    "commented facebook changes for 2019",
-    "posted youre' best TIPS for SEO"
-  ];
-  recentProfiles.forEach((profile, i) => {
-    const { first, last } = profile;
-    const membersContainer = document.createElement("div");
-    membersContainer.className += "members-container";
-    recent.appendChild(membersContainer);
-    membersContainer.innerHTML = `
-                                <img src="./images/member-${i +1}.jpg" alt="" class="profile-image">
-                                <div class="member-info">
-                                  <div class="recent-text">
-                                    <p>${first} ${last} ${status[i]}</p>
-                                    <p>${time[i]} hour ago</p>
-                                  </div>
-                                </div>
-                                <p class="read-more">></p>`;
+  inp.addEventListener("keydown", function(e) {
+    let x = document.getElementById(this.id + "autocomplete-list");
+    if (x) x = x.getElementsByTagName("div");
+    if (e.keyCode == 40) {
+      currentFocus++;
+
+      addActive(x);
+    } else if (e.keyCode == 38) {
+      currentFocus--;
+
+      addActive(x);
+    } else if (e.keyCode == 13) {
+      e.preventDefault();
+      if (currentFocus > -1) {
+        if (x) x[currentFocus].click();
+      }
+    }
   });
-};
+  function addActive(x) {
+    if (!x) return false;
 
-function formatDate(date) {
-  const newDate = new Date(date);
-  const newEvent = newDate.toLocaleDateString("en-US");
-  return newEvent;
+    removeActive(x);
+    if (currentFocus >= x.length) currentFocus = 0;
+    if (currentFocus < 0) currentFocus = x.length - 1;
+
+    x[currentFocus].classList.add("autocomplete-active");
+  }
+  function removeActive(x) {
+    for (let i = 0; i < x.length; i++) {
+      x[i].classList.remove("autocomplete-active");
+    }
+  }
+  function closeAllLists(elmnt) {
+    const x = document.getElementsByClassName("autocomplete-items");
+    for (let i = 0; i < x.length; i++) {
+      if (elmnt != x[i] && elmnt != inp) {
+        x[i].parentNode.removeChild(x[i]);
+      }
+    }
+  }
+
+  document.addEventListener("click", function(e) {
+    closeAllLists(e.target);
+  });
 }
 
 //****************************
