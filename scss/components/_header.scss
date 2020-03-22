@@ -17,21 +17,80 @@
   margin-bottom: $padding-s;
 }
 
-.account {
+.u-flex {
   @include flexy($wrap: nowrap, $justify: space-between);
+  list-style: none;
   font-weight: 500;
   letter-spacing: 1.5px;
 }
 
-.account > .profile-image {
+.u-flex .profile-image {
   border-radius: 50%;
   width: 25px;
   height: auto;
 }
 
+.box {
+  display: block;
+  position: absolute;
+
+  background-color: $white;
+  right: -145px;
+  width: 250px;
+  height: 100px;
+  padding: 10px;
+  border: solid 2px $grey-color;
+  margin: 10px;
+  border-radius: 2px;
+  &::before {
+   visibility: hidden;
+    content: "";
+    position: absolute;
+    top: -30px;
+    right: 0px;
+    width: 0;
+    height: 0;
+    border: solid 20px transparent;
+    border-bottom-width: 10px;
+    border-left-width: 20px;
+    border-right-width: 10px;
+
+    border-color: transparent transparent $grey-color transparent;
+    display: block;
+  }
+}
+
+.notification-list {
+  list-style: none;
+  padding-left: 0px;
+  color: $black;
+  & li {
+    @include flexy($justify: space-between, $wrap: nowrap);
+    height: 50px;
+    color: $side-nav-color;
+    font-size: $font-size-s;
+  }
+
+  & li:last-child {
+    padding: 5px 0;
+    border-top: 1px solid grey;
+  }
+}
+.li-first {
+  position: relative;
+}
+.notification-dot {
+  position: absolute;
+  right: 10px;
+  width: 8px;
+  height: 8px;
+  border: solid 1px $green-color;
+  background-color: $green-color;
+  border-radius: 50%;
+}
+
 .bell-image {
   transform-origin: 25% 50%;
-
   height: 30px;
   width: 30px;
   padding-right: $padding-s;
@@ -63,6 +122,12 @@
   .account > .profile-image {
     width: 30px;
     padding: $padding-s;
+  }
+
+  .box {
+     right: 0px;
+     &::before {
+   visibility: visible;}
   }
 }
 

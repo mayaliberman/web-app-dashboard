@@ -14,18 +14,39 @@
 <body class="grid-container">
     <header class="header">
         <h1>Your App</h1>
-        <div class="account">
+        <nav class="account">
+            <ul class="u-flex">
+                <li class="li-first">
+                    <span class="notification-dot"></span>
+                     <svg class="bell-image" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+                        <path class="bell-fill"
+                            d="M24 18v-8c0-5.5-4.5-10-10-10S4 4.5 4 10v8l-4 8h9.1c.5 2.3 2.5 4 4.9 4s4.4-1.7 4.9-4H28l-4-8zM14 28c-1.3 0-2.4-.8-2.8-2h5.6c-.4 1.2-1.5 2-2.8 2zM3 24l3-6v-8c0-4.4 3.6-8 8-8s8 3.6 8 8v8l3 6H3z"
+                            fill="#fff" />
+                    </svg>
 
-            <svg class="bell-image" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
-                <path class="bell-fill"
-                    d="M24 18v-8c0-5.5-4.5-10-10-10S4 4.5 4 10v8l-4 8h9.1c.5 2.3 2.5 4 4.9 4s4.4-1.7 4.9-4H28l-4-8zM14 28c-1.3 0-2.4-.8-2.8-2h5.6c-.4 1.2-1.5 2-2.8 2zM3 24l3-6v-8c0-4.4 3.6-8 8-8s8 3.6 8 8v8l3 6H3z"
-                    fill="#fff" />
-            </svg>
+                    <div class="box">
+                        <ul class="notification-list">
+                            <li>
+                                <p >New member joined Facebook</p>
+                                <p class="delete-message">x</p>
+                            </li>
+                            <li>
+                                <p>Vladimir Krau liked a Twitter post</p>
+                                <p class="delete-message">x</p>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+                <li>
+                    <img class="profile-image" src="./images/member-1.jpg" />
+                </li>
+                <li>
+                    <h3 class="profile-name">Johnna Smith</h3>
+                </li>
+            </ul>
 
-            <div class="notifications"></div>
-            <img class="profile-image" src="./images/member-1.jpg" />
-            <h3 class="profile-name">Johnna Smith</h3>
-        </div>
+            <!-- <div class="notifications"></div> -->
+        </nav>
         </div>
     </header>
     <nav class="navigation">
@@ -152,8 +173,8 @@
                 </div>
                 <form class="widget-container">
                     <!-- <input type="text" placeholder="Search for User" class="form-field" id="userField"> -->
-                    <div class="autocomplete" >
-                        <input  id="userField" type="text" name="myUser" placeholder="Search for User">
+                    <div class="autocomplete">
+                        <input id="userField" type="text" name="myUser" placeholder="Search for User">
                     </div>
                     <textarea type="textarea" placeholder="Message for User" class="form-area"
                         id="messageField"></textarea>
@@ -170,7 +191,7 @@
                         <div class="switch-container">
                             <p>Send Email Notification</p>
                             <label class="switch">
-                                <input class="email-settings" type="checkbox" >
+                                <input class="email-settings" type="checkbox">
                                 <span class="slider round"></span>
                             </label>
                         </div>
@@ -186,7 +207,7 @@
                     <!-- custom css toggle code -->
                     <div class="settings-form">
                         <select class="form-field" id="timezone"> -->
-                            <option  disabled selected>Select a Timezone</option>
+                            <option disabled selected>Select a Timezone</option>
                             <option>Eastern</option>
                             <option>Western</option>
                             <option>Middle East</option>

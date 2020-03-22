@@ -432,8 +432,7 @@ document.getElementById("save").addEventListener("click", () => {
 });
 
 const loadSettings = function () {
-  console.log(timeZones.value, 'timezone value')
-  if (localStorage.emailSettings !== null) {
+    if (localStorage.emailSettings !== null) {
     emailSwitch.checked = localStorage.emailSettings === "true";
   }
   if (localStorage.publicSettings !== null) {

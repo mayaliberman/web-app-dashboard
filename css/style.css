@@ -442,21 +442,85 @@ body {
   margin-bottom: 10px;
 }
 
-.account {
+.u-flex {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
   align-content: flex-start;
   flex-wrap: nowrap;
+  list-style: none;
   font-weight: 500;
   letter-spacing: 1.5px;
 }
 
-.account > .profile-image {
+.u-flex .profile-image {
   border-radius: 50%;
   width: 25px;
   height: auto;
+}
+
+.box {
+  display: block;
+  position: absolute;
+  background-color: #fcfcfc;
+  right: -145px;
+  width: 250px;
+  height: 100px;
+  padding: 10px;
+  border: solid 2px #b3b2b2;
+  margin: 10px;
+  border-radius: 2px;
+}
+.box::before {
+  visibility: hidden;
+  content: "";
+  position: absolute;
+  top: -30px;
+  right: 0px;
+  width: 0;
+  height: 0;
+  border: solid 20px transparent;
+  border-bottom-width: 10px;
+  border-left-width: 20px;
+  border-right-width: 10px;
+  border-color: transparent transparent #b3b2b2 transparent;
+  display: block;
+}
+
+.notification-list {
+  list-style: none;
+  padding-left: 0px;
+  color: #131415;
+}
+.notification-list li {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  align-content: flex-start;
+  flex-wrap: nowrap;
+  height: 50px;
+  color: #4d4d72;
+  font-size: 0.8rem;
+}
+.notification-list li:last-child {
+  padding: 5px 0;
+  border-top: 1px solid grey;
+}
+
+.li-first {
+  position: relative;
+}
+
+.notification-dot {
+  position: absolute;
+  right: 10px;
+  width: 8px;
+  height: 8px;
+  border: solid 1px #78cf82;
+  background-color: #78cf82;
+  border-radius: 50%;
 }
 
 .bell-image {
@@ -492,6 +556,13 @@ body {
   .account > .profile-image {
     width: 30px;
     padding: 10px;
+  }
+
+  .box {
+    right: 0px;
+  }
+  .box::before {
+    visibility: visible;
   }
 }
 @media (min-width: 1024px) {
