@@ -33,18 +33,18 @@
 .box {
   display: none;
   position: absolute;
-  background-color: #F7EBFF;
+  background-color: #f7ebff;
   right: -145px;
   width: 250px;
   height: 100px;
   padding: 10px;
-  border: 1px solid rgba(100, 100, 100, .4);
-  box-shadow: 0 3px 8px rgba(0, 0, 0, .25);
+  border: 1px solid rgba(100, 100, 100, 0.4);
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.25);
   border-radius: 8px;
   margin: 10px;
   border-radius: 2px;
   &::before {
-   visibility: hidden;
+    visibility: hidden;
     content: "";
     position: absolute;
     top: -30px;
@@ -55,7 +55,6 @@
     border-bottom-width: 10px;
     border-left-width: 20px;
     border-right-width: 10px;
-
     border-color: transparent transparent $grey-color transparent;
     display: block;
   }
@@ -77,7 +76,7 @@
 
   & li:last-child {
     padding: 5px 0;
-    border-top: 1px solid rgba(100, 100, 100, .4);
+    border-top: 1px solid rgba(100, 100, 100, 0.4);
   }
 }
 .li-first {
@@ -129,9 +128,10 @@
   }
 
   .box {
-     right: 0px;
-     &::before {
-   visibility: visible;}
+    right: 0px;
+    &::before {
+      visibility: visible;
+    }
   }
 }
 
