@@ -31,15 +31,16 @@
 }
 
 .box {
-  display: block;
+  display: none;
   position: absolute;
-
-  background-color: $white;
+  background-color: #F7EBFF;
   right: -145px;
   width: 250px;
   height: 100px;
   padding: 10px;
-  border: solid 2px $grey-color;
+  border: 1px solid rgba(100, 100, 100, .4);
+  box-shadow: 0 3px 8px rgba(0, 0, 0, .25);
+  border-radius: 8px;
   margin: 10px;
   border-radius: 2px;
   &::before {
@@ -59,7 +60,9 @@
     display: block;
   }
 }
-
+.toggle-box {
+  display: block;
+}
 .notification-list {
   list-style: none;
   padding-left: 0px;
@@ -69,11 +72,12 @@
     height: 50px;
     color: $side-nav-color;
     font-size: $font-size-s;
+    font-weight: bold;
   }
 
   & li:last-child {
     padding: 5px 0;
-    border-top: 1px solid grey;
+    border-top: 1px solid rgba(100, 100, 100, .4);
   }
 }
 .li-first {
@@ -84,8 +88,8 @@
   right: 10px;
   width: 8px;
   height: 8px;
-  border: solid 1px $green-color;
-  background-color: $green-color;
+  border: solid 1px #d11124;
+  background-color: #d11124;
   border-radius: 50%;
 }
 

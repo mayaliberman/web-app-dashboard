@@ -24,6 +24,18 @@ window.addEventListener("load", async () => {
 });
 
 //***************************** */
+//NOTIFICATION MENU
+//****************************** */
+const bell = document.querySelector(".li-first");
+const bellDot = document.querySelector(".notification-dot");
+const notificationBox = document.querySelector('.box');
+bell.addEventListener('click', (e) => {
+  bellDot.style.display = 'none';
+  
+  notificationBox.classList.toggle("toggle-box");
+  
+});
+//***************************** */
 //ALERT BANNER
 //****************************** */
 

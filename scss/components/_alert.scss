@@ -3,19 +3,18 @@
 /* ============================================= */
 
 .alert-banner {
-    @include flexy($justify: space-between, $wrap: nowrap);
-        padding: 10px 15px;
-    background-color: $primary-color;
-    margin: 15px;
-    border-radius: 5px;
-    color: $white;
-    letter-spacing: 1.5px;
-    
+  @include flexy($justify: space-between, $wrap: nowrap);
+  padding: 10px 15px;
+  background-color: $primary-color;
+  margin: 15px;
+  border-radius: 5px;
+  color: $white;
+  letter-spacing: 1.5px;
+  cursor: default;
 }
 
-@media(min-width: $media-m) {
-    .alert-banner {
-        font-size: $font-size-s;
-    }
+@media (min-width: $media-m) {
+  .alert-banner {
+    font-size: $font-size-s;
+  }
 }
-
