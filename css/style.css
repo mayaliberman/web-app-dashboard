@@ -463,7 +463,7 @@ body {
 .box {
   display: none;
   position: absolute;
-  background-color: #F7EBFF;
+  background-color: #f7ebff;
   right: -145px;
   width: 250px;
   height: 100px;
@@ -817,7 +817,7 @@ canvas {
   }
 }
 /* ============================================= */
-/*            Socila                             */
+/*            Social                             */
 /* ============================================= */
 .social-icons {
   display: flex;
@@ -858,24 +858,21 @@ canvas {
   flex-wrap: wrap;
   padding: 15px;
 }
-
 .social-text p:nth-child(2) {
   font-size: 1.5rem;
   margin: 0;
 }
-
 .social-text p:nth-child(1) {
   color: #7679c1;
   font-weight: bold;
 }
 
-.social-image svg {
-  transform: scale(1.6);
-}
-
 .social-image {
   padding-right: 15px;
   padding-left: 20px;
+}
+.social-image svg {
+  transform: scale(1.6);
 }
 
 @media (min-width: 768px) {
@@ -899,14 +896,14 @@ canvas {
   .social-icons {
     padding: 15px 15px 30px 15px;
     justify-content: space-evenly;
+    flex-wrap: nowrap;
   }
 
   .google,
 .twitter,
 .facebook {
     flex-basis: auto;
-    padding-right: 80px;
-    padding-left: 80px;
+    min-width: 240px;
   }
 
   .social-image svg {
@@ -914,7 +911,7 @@ canvas {
   }
 
   .social-image {
-    padding-right: 40px;
+    padding-right: 20px;
     padding-left: 30px;
   }
 }

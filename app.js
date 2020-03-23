@@ -249,7 +249,7 @@ const generateMembers = profiles => {
       members.appendChild(membersContainer);
       membersContainer.innerHTML = `
                               <img src="./images/member-${index +
-                                1}.jpg" alt="" class="profile-image">
+                                1}.jpg" alt="${first} ${last} profile image" class="profile-image">
                               <div class="member-info">
                                 <div class="members-text">
                                   <p>${first} ${last}</p>
@@ -279,7 +279,7 @@ const generateRecentMembers = profiles => {
     recent.appendChild(membersContainer);
     membersContainer.innerHTML = `
                                 <img src="./images/member-${i +
-                                  1}.jpg" alt="" class="profile-image">
+                                  1}.jpg" alt="${first} ${last} profile image" class="profile-image">
                                 <div class="member-info">
                                   <div class="recent-text">
                                     <p>${first} ${last} ${status[i]}</p>
