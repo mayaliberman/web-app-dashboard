@@ -1,11 +1,11 @@
 # Web Application Dashboard
 
-On this project I created fully responosive web application dashboard for social media using vanilla JavaScript,  Sass and svg animations.
-Here are some major features:
-1. I also used external Chart.js to create the graphs.
-2. The chart presents dynamic statistics. 
+On this project, I created a fully responsive web application dashboard for social media using vanilla JavaScript, Sass, and SVG animations. Here are some major features:
+
+1. I used external Chart.js to create the graphs.
+2. The chart presents a dynamic statistics.
 3. The settings are stored in the localStorage memory.
-4. The form present an autocomplete of the users. 
+4. The form presents an autocomplete of the users.
 5. A notification bar is shown on the account menu.
 
 ## Installation
